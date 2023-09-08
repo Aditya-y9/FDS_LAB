@@ -50,12 +50,12 @@ class Student extends Human {
     }
 
     // Method to display Student information
-    public void getinfo() {
-        System.out.println("The age of the Student is: " + getAge());
-        System.out.println("The rollno of the Student is: " + rollno);
-        System.out.println("The class of the Student is: " + Class_Student);
-        System.out.println("The Semester of the Student is: " + semester);
-        System.out.println("The CPI of the Student is: " + CPI);
+    public String getinfo() {
+        return ("The age of the Student is: " + getAge()+"\n"+
+        "The rollno of the Student is: " + rollno+"\n"+
+        "The class of the Student is: " + Class_Student+"\n"+
+        "The Semester of the Student is: " + semester+"\n"+
+        "The CPI of the Student is: " + CPI+"\n");
     }
 }
 
@@ -82,11 +82,11 @@ class Faculty extends Human {
     }
 
     // Method to display Faculty information
-    public void getinfo() {
-        System.out.println("The age of the Faculty is: " + getAge());
-        System.out.println("The Employee Id of the Faculty is: " + EmpID);
-        System.out.println("The Salary of the Faculty is: " + Salary);
-        System.out.println("The Specialization of the Faculty is: " + specialization);
+    public String getinfo() {
+        return("The age of the Faculty is: " + getAge() + "\n" +
+        "The Employee Id of the Faculty is: " + EmpID + "\n" +
+        "The Salary of the Faculty is: " + Salary + "\n" +
+        "The Specialization of the Faculty is: " + specialization + "\n");
     }
 }
 
@@ -97,16 +97,15 @@ class Main {
         Faculty f1 = new Faculty(45, "Mahesh Shirole Sir", "Male", 22108045, 100000, "Software");
 
         // Display initial information for Student and Faculty
-        S1.getinfo();
-        f1.getinfo();
+        System.out.println(S1.getinfo());
+        System.out.println(f1.getinfo());
 
         // Update Student and Faculty information
         S1.update(20, "Sudarshan", "Male", 221080077, "D", 4, 9.5);
         f1.update(48, "Borase Sir", "Male", 221080, 900000, "English");
 
         // Display updated information for Student and Faculty
-        S1.getinfo();
-        f1.getinfo();
+        System.out.println(S1.getinfo());
+        System.out.println(f1.getinfo());
     }
 }
-
