@@ -1,3 +1,7 @@
+import LAB_PROGRAMS.Faculty;
+import LAB_PROGRAMS.Human;
+import LAB_PROGRAMS.Student;
+
 class Human {
     private String name;
     private int age;
