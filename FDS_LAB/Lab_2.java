@@ -1,4 +1,3 @@
-package PRACTICE;
 import java.util.Scanner;
 class MyLongArray{
     int x;
