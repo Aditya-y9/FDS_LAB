@@ -1,5 +1,5 @@
 package LAB_PROGRAMS.LAB1;
-class Human {
+public class Human {
     // Attributes of a Human
     private String name;
     private int age;

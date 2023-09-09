@@ -1,7 +1,7 @@
 package LAB_PROGRAMS.LAB1;
 // inheritance in java
 
-class Student extends Human {
+public class Student extends Human {
     // Additional attributes specific to Student
     private int rollno;
     private String Class_Student;
