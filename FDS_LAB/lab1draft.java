@@ -11,6 +11,11 @@ class Human {
         this.gender = gender;
     }
 
+    //setter fn for age
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     // Getter fn for age
     public int getAge() {
         return age;
@@ -39,6 +44,24 @@ class Student extends Human {
         this.semester = semester;
         this.CPI = CPI;
     }
+
+    //setter fn for rollno
+    public void setRollno(int rollno) {
+        this.rollno = rollno;
+    }
+    //setter fn for Class_Student
+    public void setClass_Student(String Class_Student) {
+        this.Class_Student = Class_Student;
+    }
+    //setter fn for semester
+    public void setSemester(int semester) {
+        this.semester = semester;
+    }
+    //setter fn for CPI
+    public void setCPI(double CPI) {
+        this.CPI = CPI;
+    }
+
 
     // Method to update Student information
     public void update(int age, String name, String gender, int rollno, String Class_Student, int semester, double CPI) {
@@ -72,6 +95,18 @@ class Faculty extends Human {
         this.specialization = sp;
         this.Salary = sal;
     }
+    //setter fn for EmpID
+    public void setEmpID(int EmpID) {
+        this.EmpID = EmpID;
+    }
+    //setter fn for Salary
+    public void setSalary(double Salary) {
+        this.Salary = Salary;
+    }
+    //setter fn for specialization
+    public void setSpecialization(String specialization) {
+        this.specialization = specialization;
+    }
 
     // Method to update Faculty information
     public void update(int age, String name, String gender, int empid, double sal, String sp) {
@@ -100,9 +135,18 @@ class Main {
         System.out.println(S1.getinfo());
         System.out.println(f1.getinfo());
 
-        // Update Student and Faculty information
-        S1.update(20, "Sudarshan", "Male", 221080077, "D", 4, 9.5);
-        f1.update(48, "Borase Sir", "Male", 221080, 900000, "English");
+        // Update Student and Faculty information using setter methods
+        S1.setAge(20);
+        S1.setCPI(9.5);
+        S1.setClass_Student("IT");
+        S1.setRollno(221080076);
+        S1.setSemester(4);
+
+        f1.setAge(46);
+        f1.setEmpID(22108045);
+        f1.setSalary(1000000);
+        f1.setSpecialization("Software");
+
 
         // Display updated information for Student and Faculty
         System.out.println(S1.getinfo());
