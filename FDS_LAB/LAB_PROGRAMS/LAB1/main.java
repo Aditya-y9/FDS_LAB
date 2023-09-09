@@ -1,5 +1,4 @@
-package LAB_PROGRAMS;
-
+package LAB_PROGRAMS.LAB1;
 
 public class main {
     public static void main(String[] args) {

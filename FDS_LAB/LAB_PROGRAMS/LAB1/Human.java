@@ -1,4 +1,4 @@
-package LAB_PROGRAMS;
+package LAB_PROGRAMS.LAB1;
 class Human {
     // Attributes of a Human
     private String name;

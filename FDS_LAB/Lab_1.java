@@ -1,6 +1,6 @@
-import LAB_PROGRAMS.Faculty;
-import LAB_PROGRAMS.Human;
-import LAB_PROGRAMS.Student;
+import LAB_PROGRAMS.LAB1.Faculty;
+import LAB_PROGRAMS.LAB1.Human;
+import LAB_PROGRAMS.LAB1.Student;
 
 class Human {
     private String name;

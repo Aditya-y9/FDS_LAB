@@ -1,3 +1,4 @@
+package LAB_PROGRAMS.LAB2;
 import java.util.Scanner;
 class MyLongArray{
     int x;
