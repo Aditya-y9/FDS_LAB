@@ -1,7 +1,6 @@
 package LAB_PROGRAMS.LAB1;
 // inheritance in java
-
-public class Student extends Human {
+class Student extends Human {
     // Additional attributes specific to Student
     private int rollno;
     private String Class_Student;
@@ -16,7 +15,7 @@ public class Student extends Human {
         this.semester = semester;
         this.CPI = CPI;
     }
-
+ // Method to update Student information
     //setter fn for rollno
     public void setRollno(int rollno) {
         this.rollno = rollno;
@@ -34,15 +33,8 @@ public class Student extends Human {
         this.CPI = CPI;
     }
 
-
-    // Method to update Student information
-    public void update(int age, String name, String gender, int rollno, String Class_Student, int semester, double CPI) {
-        super.update(age, name, gender); // Call the superclass method keyword super to prevent overriding
-        this.rollno = rollno;
-        this.Class_Student = Class_Student;
-        this.semester = semester;
-        this.CPI = CPI;
-    }
+   
+    
 
     // Method to display Student information using string object
     public String getinfo() {

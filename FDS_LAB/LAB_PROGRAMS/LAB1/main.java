@@ -12,16 +12,20 @@ public class main {
 
         // Update Student and Faculty information using setter methods
         S1.setAge(20);
+        S1.setName("Sudarshan");
+        S1.setGender("Male");
         S1.setCPI(9.5);
         S1.setClass_Student("IT");
         S1.setRollno(221080076);
         S1.setSemester(4);
 
+        
         f1.setAge(46);
+        f1.setName("Udmale Sir");
+        f1.setGender("Male");
         f1.setEmpID(22108045);
-        f1.setSalary(1000000);
-        f1.setSpecialization("Software");
-
+        f1.setSalary(95000);
+        f1.setSpecialization("AI/ML");
 
         // Display updated information for Student and Faculty
         System.out.println(S1.getinfo());

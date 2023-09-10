@@ -1,6 +1,5 @@
 package LAB_PROGRAMS.LAB1;
 // inheritance in java
-
 public class Faculty extends Human {
     // Additional attributes specific to Faculty
     private int EmpID;
@@ -14,6 +13,7 @@ public class Faculty extends Human {
         this.specialization = sp;
         this.Salary = sal;
     }
+        // Methods to update Faculty information
     //setter fn for EmpID
     public void setEmpID(int EmpID) {
         this.EmpID = EmpID;
@@ -27,13 +27,7 @@ public class Faculty extends Human {
         this.specialization = specialization;
     }
 
-    // Method to update Faculty information
-    public void update(int age, String name, String gender, int empid, double sal, String sp) {
-        super.update(age, name, gender); // Call the superclass method
-        this.EmpID = empid;
-        this.specialization = sp;
-        this.Salary = sal;
-    }
+   
 
     // Method to display Faculty information
     public String getinfo() {
@@ -43,3 +37,4 @@ public class Faculty extends Human {
         "The Specialization of the Faculty is: " + specialization + "\n");
     }
 }
+

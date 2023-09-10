@@ -1,6 +1,7 @@
 package LAB_PROGRAMS.LAB1;
 public class Human {
     // Attributes of a Human
+
     private String name;
     private int age;
     private String gender;
@@ -15,6 +16,14 @@ public class Human {
     //setter fn for age
     public void setAge(int age) {
         this.age = age;
+    }
+    //setter fn for name
+    public void setName(String name) {
+        this.name = name;
+    }
+    //setter fn for gender
+    public void setGender(String gender){
+        this.gender=gender;
     }
 
     // Getter fn for age
