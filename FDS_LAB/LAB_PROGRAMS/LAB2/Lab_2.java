@@ -1,11 +1,20 @@
 import java.util.Scanner;
 
+/**
+ * Represents a LONG array with various operations on it.
+ * like a database.
+ */
 class MyLongArray {
     int size;
     int currentIndex = 0;
     long[] arr;
     Scanner sc = new Scanner(System.in);
 
+    /**
+     * Initializes a new instance of the MyLongArray class with the specified size.
+     *
+     * @param size The size of the array.
+     */
     MyLongArray(int size) {
         // Storing the size of the array to later traverse the array
         this.size = size;
@@ -17,8 +26,12 @@ class MyLongArray {
         }
     }
 
-    // to find a given element in the array
-    // return the matching index
+    /**
+     * Finds the index of a given element in the array.
+     *
+     * @param value The value to find in the array.
+     * @return The index of the given element if found, or -1 if not found.
+     */
     public int find(long value) {
         for (int i = 0; i < currentIndex; i++) {
             if (arr[i] == value) {
@@ -28,8 +41,11 @@ class MyLongArray {
         return -1;
     }
 
-    // insert element at the end of the array
-    // if the array is full, fn prints "Array is already full"
+    /**
+     * Inserts an element at the end of the array.
+     *
+     * @param value The value to insert.
+     */
     public void insert(long value) {
         if (currentIndex == size) {
             System.out.println("Array is already full");
@@ -38,18 +54,27 @@ class MyLongArray {
         arr[currentIndex++] = value;
     }
 
-    // get element at the given index
+    /**
+     * Gets the element at the given index.
+     *
+     * @param index The index of the element to retrieve.
+     * @return The element at the specified index.
+     */
     public long getElem(int index) {
         return arr[index];
     }
 
-    // delete function operates by just shifting the elements after the index to the left
+    /**
+     * Deletes an element at the specified index by shifting elements to the left.
+     *
+     * @param index The index of the element to delete.
+     */
     public void delete(int index) {
         if (index < 0 || index >= currentIndex) {
             System.out.println("Invalid index");
             return;
         }
-        for (int i = index; i < currentIndex-1; i++) {
+        for (int i = index; i < currentIndex - 1; i++) {
             // left shift the elements
             arr[i] = arr[i + 1];
         }
@@ -57,8 +82,12 @@ class MyLongArray {
         currentIndex--;
     }
 
-    // delete function operates by just shifting the elements after the index to the left
-    // at the index matching the given value from arguments
+    /**
+     * Deletes all occurrences of a given value in the array.
+     *
+     * @param value The value to delete.
+     * @return True if at least one element was deleted, otherwise false.
+     */
     public boolean delete(long value) {
         for (int i = 0; i < currentIndex; i++) {
             if (arr[i] == value) {
@@ -69,6 +98,9 @@ class MyLongArray {
         return false;
     }
 
+    /**
+     * Displays the elements in the array.
+     */
     public void display() {
         for (int i = 0; i < currentIndex; i++) {
             System.out.print(arr[i] + " ");
@@ -76,7 +108,12 @@ class MyLongArray {
         System.out.println();
     }
 
-    // dupDelete operates by traversing the complete array and using delete fn over the whole array
+    /**
+     * Deletes all occurrences of a given value in the array and returns the count.
+     *
+     * @param value The value to delete.
+     * @return The number of elements deleted.
+     */
     public int dupDelete(long value) {
         int count = 0;
 
@@ -90,12 +127,18 @@ class MyLongArray {
                 // decrement i as deleted fn shortens the array
             }
         }
-     return count;
+        return count;
     }
 
+    /**
+     * Inserts an element at the specified index, shifting elements to the right.
+     *
+     * @param index The index at which to insert the element.
+     * @param value The value to insert.
+     */
     public void insert(int index, long value) {
         if (index < 0 || index >= currentIndex) {
-            System.out.println("Enter index from 0 upto " + (currentIndex - 1) + " only");
+            System.out.println("Enter index from 0 up to " + (currentIndex - 1) + " only");
             return;
         }
         if (currentIndex == arr.length) {
@@ -106,15 +149,19 @@ class MyLongArray {
 
         // increase the size of the array
         currentIndex++;
-        for (int i = currentIndex-1; i > index; i--) {
+        for (int i = currentIndex - 1; i > index; i--) {
             arr[i] = arr[i - 1];
         }
         // insert the element
         arr[index] = value;
-        
-        
     }
 
+    /**
+     * Deletes an element at the specified index and returns its value.
+     *
+     * @param index The index of the element to delete.
+     * @return The deleted element's value, or -1 if the index is invalid.
+     */
     public long deleteAt(int index) {
         if (index >= 0 && index < currentIndex) {
             long temp = arr[index];
@@ -127,6 +174,9 @@ class MyLongArray {
     }
 }
 
+/**
+ * Main class to demonstrate the usage of MyLongArray.
+ */
 class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -219,6 +269,7 @@ class Main {
                     running = true;
                 } else if (choice1 == 'N' || choice1 == 'n') {
                     running = false;
+                    System.out.println("Thank you for using the program");
                 } else {
                     System.out.println("Enter a valid character");
                 }
@@ -226,3 +277,4 @@ class Main {
         }
     }
 }
+
