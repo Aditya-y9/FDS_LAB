@@ -16,52 +16,54 @@ class MyLongArray {
             currentIndex++;
         }
     }
-
     // to find a given element in the array
-    // return the matching index
-    public int find(long value) {
-        for (int i = 0; i < currentIndex; i++) {
-            if (arr[i] == value) {
-                return i;
+    // return the mathcing index
+    public int find(long value){
+            for(int i=0;i<currentIndex;i++){
+                if(arr[i] == value){
+                    return i;
+                }
             }
+            return -1;
         }
-        return -1;
-    }
-
     // insert element at the end of the array
     // if the array is full, fn prints "Array is already full"
-    public void insert(long value) {
-        if (currentIndex == size) {
+    public void insert(long value){
+        if(currentIndex == size){
             System.out.println("Array is already full");
             return;
         }
-        arr[currentIndex++] = value;
+        arr[currentIndex] = value;
+        currentIndex++;
     }
 
-    // get element at the given index
-    public long getElem(int index) {
-        return arr[index];
-    }
+    // get element on the given index
+    public long getElem(int index){
+            return arr[index];
+        }
+
+    
+
+
 
     // delete function operates by just shifting the elements after the index to the left
-    public void delete(int index) {
-        if (index < 0 || index >= currentIndex) {
+    public void delete(int index){
+        if (index < 0 || index >= currentIndex){
             System.out.println("Invalid index");
             return;
         }
-        for (int i = index; i < currentIndex - 1; i++) {
+        for(int i=index;i<currentIndex-1;i++){
             // left shift the elements
-            arr[i] = arr[i + 1];
+            arr[i] = arr[i+1];
         }
         // make the current array size smaller
         currentIndex--;
     }
-
     // delete function operates by just shifting the elements after the index to the left
-    // at the index matching the given value from arguments
-    public boolean delete(long value) {
-        for (int i = 0; i < currentIndex; i++) {
-            if (arr[i] == value) {
+        // at index matching the given value from arguments
+    public boolean delete(long value){
+        for(int i=0;i<currentIndex;i++){
+            if(arr[i] == value){
                 delete(i);
                 return true;
             }
@@ -69,46 +71,37 @@ class MyLongArray {
         return false;
     }
 
-    public void display() {
-        for (int i = 0; i < currentIndex; i++) {
-            System.out.print(arr[i] + " ");
+    public void display(){
+            for(int i=0;i<currentIndex;i++){
+                System.out.print(arr[i] + " ");
+            }
+            System.out.println();
         }
-        System.out.println();
-    }
 
     // dupDelete operates by traversing the complete array and using delete fn over the whole array
-    public int dupDelete(long value) {
-        int count = 0;
+    public int dupDelete(long value){
+            int count = 0;
 
-        // traverse the whole array
-        for (int i = 0; i < currentIndex; i++) {
-            if (arr[i] == value) {
-                // delete matching elements
-                delete(i);
-                count++;
+            // traverse the whole array
+            for(int i=0;i<currentIndex;i++){
+                if(arr[i] == value){
+                    // delete matching elements
+                    delete(i);
+                    count++;
+                }
             }
+            return count;
         }
-        return count;
-    }
 
-    public void insert(int index, long value) {
-        if (index < 0 || index >= currentIndex) {
-            System.out.println("Enter index upto " + currentIndex + " only");
-            return;
-        }
-        if (currentIndex == arr.length) {
-            System.out.println("Array is already full");
-            return;
-        }
-        // right shift the elements
-        for (int i = currentIndex; i > index; i--) {
-            arr[i] = arr[i - 1];
-        }
-        // insert the element
-        arr[index] = value;
-        // increase the size of the array
-        currentIndex++;
+
+    public void insert(int index, long value){
+            for(int i=currentIndex;i>index;i--){
+                arr[i] = arr[i-1];
+            }
+            arr[index] = value;
+            currentIndex++;
     }
+    
 
     public long deleteAt(int index) {
         if (index >= 0 && index < currentIndex) {
@@ -120,9 +113,11 @@ class MyLongArray {
             return -1; // Return a default value or handle it differently
         }
     }
+
+    
 }
 
-class Main {
+public class main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the size of the array");
@@ -135,21 +130,20 @@ class Main {
 
         while (running) {
             System.out.println("Enter the operation to be performed\n" +
-                    "1: Find an element\n" +
-                    "2: Insert an element\n" +
-                    "3: Get an element\n" +
-                    "4: Delete an element\n" +
-                    "5: Display the array\n" +
-                    "6: Delete all the elements matching the given value\n" +
-                    "7: Insert an element at a given index\n" +
-                    "8: Delete an element at a given index\n" +
-                    "9: Exit");
+                    "1:Find an element\n" +
+                    "2:Insert an element\n" +
+                    "3:Get an element\n" +
+                    "4:Delete an element\n" +
+                    "5:Display the array\n" +
+                    "6:Delete all the elements matching the given value\n" +
+                    "7:Insert an element at a given index\n" +
+                    "8:Delete an element at a given index\n" +
+                    "9:Exit");
             int choice = sc.nextInt();
-            Exit = false;
-            while (!Exit) {
+            while (Exit == false) {
                 switch (choice) {
                     case 1:
-                        System.out.println("Enter the element to find");
+                        System.out.println("Enter the element to be found");
                         long value = sc.nextLong();
                         int index = arr.find(value);
                         if (index == -1) {
