@@ -49,7 +49,7 @@ class MyLongArray {
             System.out.println("Invalid index");
             return;
         }
-        for (int i = index; i < currentIndex - 1; i++) {
+        for (int i = index; i < currentIndex-1; i++) {
             // left shift the elements
             arr[i] = arr[i + 1];
         }
@@ -86,14 +86,16 @@ class MyLongArray {
                 // delete matching elements
                 delete(i);
                 count++;
+                i--;
+                // decrement i as deleted fn shortens the array
             }
         }
-        return count;
+     return count;
     }
 
     public void insert(int index, long value) {
         if (index < 0 || index >= currentIndex) {
-            System.out.println("Enter index upto " + currentIndex + " only");
+            System.out.println("Enter index from 0 upto " + (currentIndex - 1) + " only");
             return;
         }
         if (currentIndex == arr.length) {
@@ -101,13 +103,16 @@ class MyLongArray {
             return;
         }
         // right shift the elements
-        for (int i = currentIndex; i > index; i--) {
+
+        // increase the size of the array
+        currentIndex++;
+        for (int i = currentIndex-1; i > index; i--) {
             arr[i] = arr[i - 1];
         }
         // insert the element
         arr[index] = value;
-        // increase the size of the array
-        currentIndex++;
+        
+        
     }
 
     public long deleteAt(int index) {

@@ -1,77 +1,16 @@
-import java.util.Random;
 
-class main {
-  public static void main(String[] args) {
-    MyLongArray longArray = new MyLongArray(10);
-    
-    // Insert values into the array
-    longArray.insert(11);
-    longArray.insert(22);
-    longArray.insert(33);
-    longArray.insert(44);
-    longArray.insert(55);
-    longArray.insert(66);
-    longArray.insert(77);
-    longArray.insert(88);
-    longArray.insert(99);
-    longArray.insert(111);
-    longArray.insert(222);
 
-    longArray.display();
-
-    System.out.println("Index of 11: " + longArray.find(11));
-    System.out.println("Index of 50: " + longArray.find(50));
-    
-    // Delete a value
-    longArray.delete(44);
-    
-    // Display array values
-    longArray.display();
-
-    // Insert a value at a specific index
-    longArray.insert(2, 99);
-    
-    // Display array values
-    longArray.display();
-
-    longArray.deleteAtIndex(1);
-    
-    // Display array values
-    longArray.display();
-    
-    // Random array elements
-    longArray.initArray();
-    // various sorting algorithms
-    longArray.bubbleSort();
-    // Display array values
-    longArray.display();
-    
-    // Random array elements
-    longArray.initArray();
-    // insertionSort
-    longArray.insertionSort();
-    // Display array values
-    longArray.display();
-    
-    // Random array elements
-    longArray.initArray();
-    // selectionSort
-    longArray.selectionSort();
-    // Display array values
-    longArray.display();
-    
-  }
-}
-
-class MyLongArray {
+public class MyLongArray {
   private long[] array;
   private int currentIndex;
+  private int size;
 
   public MyLongArray(int size) {
+    this.size = size;
     array = new long[size];
     currentIndex = 0;
   }
-
+  
   public int find(long searchKey) {
     for (int i = 0; i < currentIndex; i++) {
       if (array[i] == searchKey) {
