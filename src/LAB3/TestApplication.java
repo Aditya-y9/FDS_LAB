@@ -1,6 +1,9 @@
+
 import java.util.Scanner;
 
+
 /**
+ * 
  * <p>The <code>TestApplication</code> class represents a test application for <code>MyLongArray</code>
  * It allows users to perform various operations on an array of long values.</p>
  *@author Aditya Yedurkar
@@ -11,7 +14,7 @@ import java.util.Scanner;
  * This program is used to perform various operations on an array of long values
  * </p>
  */
-class TestApplication {
+public class TestApplication {
     /**
      * The main method that allows users to interact with <code>MyLongArray</code>
      *
@@ -28,21 +31,18 @@ class TestApplication {
 
         while (running) {
             System.out.println("Enter the operation to be performed\n" +
-                    "<ol>"+
-                    "<li>Initialize the array</li>"+
-                    "<li>Find an element</li>"+
-                    "<li>Insert an element</li>"+
-                    "<li>Get an element</li>"+
-                    "<li>Delete an element</li>"+
-                    "<li>Display the array</li>"+
-                    "<li>Delete all the elements matching the given value</li>"+
-                    "<li>Insert an element at a given index</li>"+
-                    "<li>Delete an element at a given index</li>"+
-                    "<li>Exit</li>"+
-                    "<li>Bubble Sort</li>"+
-                    "<li>Selection Sort</li>"+
-                    "<li>Insertion Sort</li>"+
-                    "</ol>");
+                    "0. Initialize the array\n" +
+                    "1. Find an element\n" +
+                    "2. Insert an element\n" +
+                    "3. Get an element\n" +
+                    "4. Delete an element\n" +
+                    "5. Display the array\n" +
+                    "6. Delete all elements matching a value\n" +
+                    "7. Insert an element at a given index\n" +
+                    "8. Delete an element at a given index\n" +
+                    "9. Bubble sort\n" +
+                    "10. Selection sort\n" +
+                    "11. Insertion sort\n");
             int choice = sc.nextInt();
             Exit = false;
             while (!Exit) {
@@ -197,3 +197,4 @@ class TestApplication {
         }
     }
 }
+

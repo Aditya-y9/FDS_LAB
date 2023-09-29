@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TestApplication",
+            "request": "launch",
+            "mainClass": "TestApplication",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
             "name": "Launch Java Program",
             "request": "launch",
             "mainClass": ""

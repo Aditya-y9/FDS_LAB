@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.util.Random;
 
 /**
+
  * <html>
  * <head>
  * <title>MyLongArray Class</title>
@@ -16,6 +17,28 @@ import java.util.Random;
  * manipulating long arrays.
  * Additionally, the program utilizes random number generation to populate the array with random long values,
  * enhancing its flexibility and usefulness for experimentation and testing
+ * 
+ * This class manages an array of long values and provides various operations.
+ *
+ * Data members:
+ * - a[]: long -- An array of type long, storing elements within the class
+ * - currentIndex: int -- Keeps track of the index of the last element in the array
+ *
+ * Member functions:
+ * - MyLongArray(int size): void -- Initializes the class with an internal array of the specified size
+ * - find(long searchKey) : int -- Searches for a specified 'searchKey' in the array and returns its index if found
+ * - insert(long value): void -- Inserts 'value' into the array at the current index and increments the index
+ * - getElement(int index): long -- Retrieves the element at the specified 'index' if it's within bounds; otherwise, returns -1
+ * - delete(long value): boolean -- Removes the first occurrence of 'value' from the array, shifts elements, decrements currentIndex, and returns true if successful, false if 'value' is not found
+ * - display():void -- Displays all elements of the array
+ * - dupDelete(long value): int -- Deletes all instances of 'value' from the array and returns the count of deleted elements
+ * - insert(int index, long value): void -- Inserts 'value' at the specified 'index' if 'index' <= currentIndex; otherwise, inserts at currentIndex and increments it, displaying a warning message
+ * - deleteAt(int index): long -- Deletes the element at the specified 'index' if it's within bounds; otherwise, returns -1
+ * - bubbleSort(): void -- Sorts the array using the bubble sort algorithm
+ * - selectionSort(): void -- Sorts the array using the selection sort algorithm
+ * - insertionSort(): void -- Sorts the array using the insertion sort algorithm
+ * - initArray(): void -- Initializes the array with random long values
+ * 
  * </p>
  * <p>
  * The <code>MyLongArray</code> class represents a LONG array with various operations on it
@@ -32,7 +55,7 @@ import java.util.Random;
  * </html>
  */
 
-class MyLongArray {
+public class MyLongArray {
     int size;
     int currentIndex = 0;
     long[] arr;
@@ -94,23 +117,16 @@ class MyLongArray {
             System.out.println(e.getMessage());
         }
     }
+    public long getElem(int index) {
+        return arr[index];
+    }
 
     /**
      * Gets the element at the given index
      * @param index The index of the element to retrieve
      * @return The element at the specified index
      */
-    public long getElem(int index) {
-        try {
-            if (index < 0 || index >= currentIndex) {
-                throw new IndexOutOfBoundsException("Invalid index");
-            }
-            return arr[index];
-        } catch (IndexOutOfBoundsException e) {
-            System.out.println(e.getMessage());
-            return -1;
-        }
-    }
+    
 
     /**
      * Deletes an element at the specified index by shifting elements to the left
