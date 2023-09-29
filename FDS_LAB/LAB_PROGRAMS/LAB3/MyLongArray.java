@@ -208,8 +208,15 @@ class MyLongArray {
     public void initArray() {
         Random r = new Random();
         for (int i = 0; i < arr.length; i++) {
+            
             arr[i] = r.nextLong();
+            System.out.println(arr[i]);
         }
+        // because we have initialized the array
+        // upto its whole length
+        // then it is maximum filled
+        // so max index is the length of the array
+        currentIndex = arr.length;
     }
 }
 

@@ -33,7 +33,9 @@ class TestApplication {
             while (!Exit) {
                 switch (choice) {
                     case 0:
+                        System.out.println("befre init");
                         arr.initArray();
+                        System.out.println("after init");
                         Exit = true;
                         break;
                     case 1:
