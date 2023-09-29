@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 
 /**
  * Represents a LONG array with various operations on it.
@@ -19,11 +20,7 @@ class MyLongArray {
         // Storing the size of the array to later traverse the array
         this.size = size;
         arr = new long[size];
-        for (int i = 0; i < size; i++) {
-            System.out.println("Please Enter the value at index " + i);
-            arr[i] = sc.nextLong();
-            currentIndex++;
-        }
+        
     }
 
     /**
@@ -172,6 +169,46 @@ class MyLongArray {
             return -1; // Return a default value or handle it differently
         }
     }
+    public void bubbleSort() {
+        for (int i = 0; i < currentIndex - 1; i++) {
+            for (int j = 0; j < currentIndex - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    long temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        } 
+    }
+    public void selectionSort() {
+        for (int i = 0; i < currentIndex - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < currentIndex; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            long temp = arr[minIndex];
+            arr[minIndex] = arr[i];
+            arr[i] = temp;
+        }
+    }
+    public void insertionSort() {
+        for (int i = 1; i < currentIndex; i++) {
+            long temp = arr[i];
+            int j = i - 1;
+            while (j >= 0 && arr[j] > temp) {
+                arr[j + 1] = arr[j--];
+            }
+            arr[j + 1] = temp;
+        }
+    }
+    public void initArray() {
+        Random r = new Random();
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = r.nextLong();
+        }
+    }
 }
 
 /**
@@ -182,7 +219,7 @@ class Main {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the size of the array");
         int size = sc.nextInt();
-        MyLongArray arr = new MyLongArray(size);
+        LAB2 arr = new LAB2(size);
 
         char choice1 = 'Y';
         boolean Exit = false;
@@ -190,6 +227,7 @@ class Main {
 
         while (running) {
             System.out.println("Enter the operation to be performed\n" +
+                    "0: Initialize the array\n"+
                     "1: Find an element\n" +
                     "2: Insert an element\n" +
                     "3: Get an element\n" +
@@ -198,11 +236,18 @@ class Main {
                     "6: Delete all the elements matching the given value\n" +
                     "7: Insert an element at a given index\n" +
                     "8: Delete an element at a given index\n" +
-                    "9: Exit");
+                    "9: Exit\n"+
+                    "10: Bubble Sort\n"+
+                    "11: Selection Sort\n"+
+                    "12: Insertion Sort\n");
             int choice = sc.nextInt();
             Exit = false;
             while (!Exit) {
                 switch (choice) {
+                    case 0:
+                        arr.initArray();
+                        Exit = true;
+                        break;
                     case 1:
                         System.out.println("Enter the element to find");
                         long value = sc.nextLong();
@@ -255,6 +300,27 @@ class Main {
                         System.out.println("Enter the index of the element to be deleted");
                         index = sc.nextInt();
                         System.out.println("Element deleted is " + arr.deleteAt(index));
+                        Exit = true;
+                        break;
+                    case 9:
+                        // bubble sort
+                        arr.bubbleSort();
+                        System.out.println("Array after bubble sort");
+                        arr.display();
+                        Exit = true;
+                        break;
+                    case 10:
+                        // selection sort
+                        arr.selectionSort();
+                        System.out.println("Array after selection sort");
+                        arr.display();
+                        Exit = true;
+                        break;
+                    case 11:
+                        // insertion sort
+                        arr.insertionSort();
+                        System.out.println("Array after insertion sort");
+                        arr.display();
                         Exit = true;
                         break;
                     default:
