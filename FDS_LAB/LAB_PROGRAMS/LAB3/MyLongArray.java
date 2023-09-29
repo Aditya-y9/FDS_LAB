@@ -1,12 +1,29 @@
-package LAB3;
 
 import java.util.Scanner;
 import java.util.Random;
 
 /**
- * Represents a LONG array with various operations on it.
- * like a database.
+ * <html>
+ * <head>
+ * <title>MyLongArray Class</title>
+ * </head>
+ * <body>
+ * <h1>MyLongArray Class - Array Operations with Documentation</h1>
+ * <p>
+ * The <code>MyLongArray</code> class represents a LONG array with various operations on it.
+ * It allows you to perform operations similar to a database on an array of long values.
+ * This class provides methods for initialization, insertion, deletion, searching, sorting,
+ * and more on a long array.
+ * </p>
+ * @author Aditya Yedurkar 221080076
+ * @version 1.5
+ *
+ * <p><strong>Author: Aditya Yedurkar 221080076</strong> Your Name</p>
+ * <p><strong>Version:</strong> 1.5</p>
+ * </body>
+ * </html>
  */
+
 class MyLongArray {
     int size;
     int currentIndex = 0;
@@ -14,7 +31,7 @@ class MyLongArray {
     Scanner sc = new Scanner(System.in);
 
     /**
-     * Initializes a new instance of the MyLongArray class with the specified size.
+     * Initializes a new instance of the <code>MyLongArray</code> class with the specified size.
      *
      * @param size The size of the array.
      */
@@ -22,7 +39,6 @@ class MyLongArray {
         // Storing the size of the array to later traverse the array
         this.size = size;
         arr = new long[size];
-        
     }
 
     /**
@@ -171,6 +187,10 @@ class MyLongArray {
             return -1; // Return a default value or handle it differently
         }
     }
+
+    /**
+     * Sorts the array using the bubble sort algorithm.
+     */
     public void bubbleSort() {
         for (int i = 0; i < currentIndex - 1; i++) {
             for (int j = 0; j < currentIndex - i - 1; j++) {
@@ -180,8 +200,12 @@ class MyLongArray {
                     arr[j + 1] = temp;
                 }
             }
-        } 
+        }
     }
+
+    /**
+     * Sorts the array using the selection sort algorithm.
+     */
     public void selectionSort() {
         for (int i = 0; i < currentIndex - 1; i++) {
             int minIndex = i;
@@ -195,6 +219,10 @@ class MyLongArray {
             arr[i] = temp;
         }
     }
+
+    /**
+     * Sorts the array using the insertion sort algorithm.
+     */
     public void insertionSort() {
         for (int i = 1; i < currentIndex; i++) {
             long temp = arr[i];
@@ -205,18 +233,19 @@ class MyLongArray {
             arr[j + 1] = temp;
         }
     }
+
+    /**
+     * Initializes the array with random long values.
+     */
     public void initArray() {
         Random r = new Random();
         for (int i = 0; i < arr.length; i++) {
-            
             arr[i] = r.nextLong();
-            System.out.println(arr[i]);
         }
         // because we have initialized the array
-        // upto its whole length
+        // up to its whole length
         // then it is maximum filled
         // so max index is the length of the array
         currentIndex = arr.length;
     }
 }
-
