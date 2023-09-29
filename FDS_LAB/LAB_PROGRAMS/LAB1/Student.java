@@ -1,4 +1,4 @@
-package LAB_PROGRAMS.LAB1;
+
 // inheritance in java
 class Student extends Human {
     // Additional attributes specific to Student

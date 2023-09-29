@@ -1,4 +1,4 @@
-package LAB_PROGRAMS.LAB1;
+// Name: Aditya Yedurkar
 
 public class main {
     public static void main(String[] args) {

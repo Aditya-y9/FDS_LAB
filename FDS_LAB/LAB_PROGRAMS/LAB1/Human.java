@@ -1,4 +1,4 @@
-package LAB_PROGRAMS.LAB1;
+
 public class Human {
     // Attributes of a Human
 
