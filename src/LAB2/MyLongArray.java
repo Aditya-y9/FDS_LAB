@@ -7,7 +7,7 @@ import java.util.Scanner;
  * Represents a LONG array with various operations on it
  * like a database
  */
-class MyLongArray1 {
+class MyLongArray {
     int size;
     int currentIndex = 0;
     long[] arr;
@@ -18,7 +18,7 @@ class MyLongArray1 {
      *
      * @param size The size of the array
      */
-    MyLongArray1(int size) {
+    MyLongArray(int size) {
         // Storing the size of the array to later traverse the array
         this.size = size;
         arr = new long[size];

@@ -4,6 +4,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
 
 PS C:\Users\MSHOME\Desktop\Newfolder\FDS_LAB\src>  & 'C:\Program Files\Java\jdk-20\bin\java.exe' '--enable-preview' '-XX:+ShowCodeDetailsInExceptionMessages' '-cp' 'C:\Users\MSHOME\AppData\Roaming\Code\User\workspaceStorage\99a8f681bb9c3f671fd5061d8edc5661\redhat.java\jdt_ws\src_efcdd259\bin' 'TestApplication' 
+
 Enter the size of the array
 5
 Enter the operation to be performed
@@ -38,7 +39,7 @@ Enter the operation to be performed
 11. Insertion sort
 
 5
-795497351194145583 -8706053564362424094 4606776710634672793 6037301443612343620 -271685147153296513
+-8509626352544910088 -484814113513211804 5271226815181707710 8520026071355568429 -9066419085583446262
 Do you want to continue? (Y/N)
 y
 Enter the operation to be performed
@@ -55,8 +56,97 @@ Enter the operation to be performed
 10. Selection sort
 11. Insertion sort
 
-4
-Enter the index of the element to be deleted
+9
+Array after bubble sort
+-9066419085583446262 -8509626352544910088 -484814113513211804 5271226815181707710 8520026071355568429
+Do you want to continue? (Y/N)
+y
+Enter the operation to be performed
+0. Initialize the array
+1. Find an element
+2. Insert an element
+3. Get an element
+4. Delete an element
+5. Display the array
+6. Delete all elements matching a value
+7. Insert an element at a given index
+8. Delete an element at a given index
+9. Bubble sort
+10. Selection sort
+11. Insertion sort
+
+5
+-9066419085583446262 -8509626352544910088 -484814113513211804 5271226815181707710 8520026071355568429
+Do you want to continue? (Y/N)
+y
+Enter the operation to be performed
+0. Initialize the array
+1. Find an element
+2. Insert an element
+3. Get an element
+4. Delete an element
+5. Display the array
+6. Delete all elements matching a value
+7. Insert an element at a given index
+8. Delete an element at a given index
+9. Bubble sort
+10. Selection sort
+11. Insertion sort
+
+0
+Do you want to continue? (Y/N)
+y
+Enter the operation to be performed
+0. Initialize the array
+1. Find an element
+2. Insert an element
+3. Get an element
+4. Delete an element
+5. Display the array
+6. Delete all elements matching a value
+7. Insert an element at a given index
+8. Delete an element at a given index
+9. Bubble sort
+10. Selection sort
+11. Insertion sort
+
+5
+-5142799615757993220 4375806100963257862 8453198239231987896 -7173548176316238034 6293965163190439814
+Do you want to continue? (Y/N)
+y
+Enter the operation to be performed
+0. Initialize the array
+1. Find an element
+2. Insert an element
+3. Get an element
+4. Delete an element
+5. Display the array
+6. Delete all elements matching a value
+7. Insert an element at a given index
+8. Delete an element at a given index
+9. Bubble sort
+10. Selection sort
+11. Insertion sort
+
+10
+Array after selection sort
+-7173548176316238034 -5142799615757993220 4375806100963257862 6293965163190439814 8453198239231987896
+Do you want to continue? (Y/N)
+y
+Enter the operation to be performed
+0. Initialize the array
+1. Find an element
+2. Insert an element
+3. Get an element
+4. Delete an element
+5. Display the array
+6. Delete all elements matching a value
+7. Insert an element at a given index
+8. Delete an element at a given index
+9. Bubble sort
+10. Selection sort
+11. Insertion sort
+
 0
 Do you want to continue? (Y/N)
 y
@@ -76,205 +166,7 @@ Enter the operation to be performed
 
 11
 Array after insertion sort
--8706053564362424094 -271685147153296513 4606776710634672793 6037301443612343620     
-Do you want to continue? (Y/N)
-y
-Enter the operation to be performed
-0. Initialize the array
-1. Find an element
-2. Insert an element
-3. Get an element
-4. Delete an element
-5. Display the array
-6. Delete all elements matching a value
-7. Insert an element at a given index
-8. Delete an element at a given index
-9. Bubble sort
-10. Selection sort
-11. Insertion sort
-
-8
-Enter the index of the element to be deleted
-2
-Element deleted is 4606776710634672793
-Do you want to continue? (Y/N)
-y
-Enter the operation to be performed
-0. Initialize the array
-1. Find an element
-2. Insert an element
-3. Get an element
-4. Delete an element
-5. Display the array
-6. Delete all elements matching a value
-7. Insert an element at a given index
-8. Delete an element at a given index
-9. Bubble sort
-10. Selection sort
-11. Insertion sort
-
-7
-Enter the index at which the element is to be inserted
-0
-Enter the value of the element to be inserted
-9
-Do you want to continue? (Y/N)
-y
-Enter the operation to be performed
-0. Initialize the array
-1. Find an element
-2. Insert an element
-3. Get an element
-4. Delete an element
-5. Display the array
-6. Delete all elements matching a value
-7. Insert an element at a given index
-8. Delete an element at a given index
-9. Bubble sort
-10. Selection sort
-11. Insertion sort
-
-5
-9 -8706053564362424094 -271685147153296513 6037301443612343620
-Do you want to continue? (Y/N)
-y
-Enter the operation to be performed
-0. Initialize the array
-1. Find an element
-2. Insert an element
-3. Get an element
-4. Delete an element
-5. Display the array
-6. Delete all elements matching a value
-7. Insert an element at a given index
-8. Delete an element at a given index
-9. Bubble sort
-10. Selection sort
-11. Insertion sort
-
-7
-Enter the index at which the element is to be inserted
-1
-Enter the value of the element to be inserted
-9
-Do you want to continue? (Y/N)
-y
-Enter the operation to be performed
-0. Initialize the array
-1. Find an element
-2. Insert an element
-3. Get an element
-4. Delete an element
-5. Display the array
-6. Delete all elements matching a value
-7. Insert an element at a given index
-8. Delete an element at a given index
-9. Bubble sort
-10. Selection sort
-11. Insertion sort
-
-5
-9 9 -8706053564362424094 -271685147153296513 6037301443612343620
-Do you want to continue? (Y/N)
-6
-Enter a valid character
-Enter the operation to be performed
-0. Initialize the array
-1. Find an element
-2. Insert an element
-3. Get an element
-4. Delete an element
-5. Display the array
-6. Delete all elements matching a value
-7. Insert an element at a given index
-8. Delete an element at a given index
-9. Bubble sort
-10. Selection sort
-11. Insertion sort
-
-9
-Array after bubble sort
--8706053564362424094 -271685147153296513 9 9 6037301443612343620
-Do you want to continue? (Y/N)
-y
-Enter the operation to be performed
-0. Initialize the array
-1. Find an element
-2. Insert an element
-3. Get an element
-4. Delete an element
-5. Display the array
-6. Delete all elements matching a value
-7. Insert an element at a given index
-8. Delete an element at a given index
-9. Bubble sort
-10. Selection sort
-11. Insertion sort
-
-6
-Enter the value of the element to be deleted
-9
-Number of elements deleted are 2
-Do you want to continue? (Y/N)
-y
-Enter the operation to be performed
-0. Initialize the array
-1. Find an element
-2. Insert an element
-3. Get an element
-4. Delete an element
-5. Display the array
-6. Delete all elements matching a value
-7. Insert an element at a given index
-8. Delete an element at a given index
-9. Bubble sort
-10. Selection sort
-11. Insertion sort
-
-3
-Enter the index of the element to be found
-0
-Element at index 0 is -8706053564362424094
-Do you want to continue? (Y/N)
-y
-Enter the operation to be performed
-0. Initialize the array
-1. Find an element
-2. Insert an element
-3. Get an element
-4. Delete an element
-5. Display the array
-6. Delete all elements matching a value
-7. Insert an element at a given index
-8. Delete an element at a given index
-9. Bubble sort
-10. Selection sort
-11. Insertion sort
-
-2
-Enter the element to be inserted
-9
-Do you want to continue? (Y/N)
-y
-Enter the operation to be performed
-0. Initialize the array
-1. Find an element
-2. Insert an element
-3. Get an element
-4. Delete an element
-5. Display the array
-6. Delete all elements matching a value
-7. Insert an element at a given index
-8. Delete an element at a given index
-9. Bubble sort
-10. Selection sort
-11. Insertion sort
-
-1
-Enter the element to find
-9
-Element found at index 3
+-7811218557312158521 -7753373949324769683 -6631099781620887167 3692296828465112832 5511966884357646260
 Do you want to continue? (Y/N)
 n
 Thank you for using the program
-PS C:\Users\MSHOME\Desktop\Newfolder\FDS_LAB\src> 

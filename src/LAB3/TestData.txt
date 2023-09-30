@@ -1,40 +1,41 @@
 Test Data for TestApplication:
-a. Array Initialization:
-   Enter the size of the array as 5
-   Choose operation 0 to initialize the array
-b. Displaying the Array:
-   Choose operation 5 to display the contents of the array
-c. Deleting Elements:
-   Choose operation 4 to delete an element by index.
-   Enter an index eg 0
-   The program should delete the element at that inde
-d. Sorting the Array:
-    Choose operations 9, 10, or 11 to perform sorting
-    After sorting, choose operation 5 to display the sorted array
-e. Deleting an Element at a Given Index:
-   Choose operation 8 to delete an element at a given index
-   Enter an index eg 2 
-   The program should display the deleted element
-f. Inserting at a Given Index:
-    Choose operation 7 to insert an element at a given index
-    Enter an index eg 0 and a value eg 9
-g. Deleting All Matching Elements:
-   Choose operation 6 to delete all elements matching a value
-   Enter a value eg 9
-   The program should display the number of deleted elements
-h. Getting Elements:
-   Choose operation 3 to get an element by index
-   Enter an index eg 0
-   The program should display the element at that index
 
-i. Inserting Elements:
-   Choose operation 2 to insert an element
-   Enter a value eg 10 to insert
-j. Finding Elements:
-   Choose operation 1 to find an element
-   Enter an element eg 10 to find
-   The program should report its index
-k. Continue Testing:
-    After completing any operation, the program should ask if you want to continue (Y/N)
-    Choose 'Y' to continue testing or 'N' to exit the program
+5
 
+// entered the size of the array
+
+0
+
+// to initialize the array with Random elements
+
+5
+
+// to Display the array
+
+9
+
+// to sort the array using bubble sort algorithm
+
+0
+
+// to re initialize the array
+
+5
+
+// to Display the array
+
+10
+
+// to sort the array using selection algorithm
+
+0
+
+// to re initialize the array
+
+5
+
+// to Display the array
+
+11
+
+// to sort the array using insertion algorithm

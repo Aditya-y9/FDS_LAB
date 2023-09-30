@@ -1,70 +1,60 @@
-
 import java.util.Scanner;
-
-public class TestApplication {
-    
-    public static void main(String[] args) {
+public class test {
+    public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the size of the array");
+        
+        int option;
+        System.out.println("enter the capacity of the array");
         int size = sc.nextInt();
-        MyLongArray arr = new MyLongArray(size);
+        MyLongArray a = new MyLongArray(size);
 
         char choice1 = 'Y';
         boolean Exit = false;
         boolean running = true;
 
         while (running) {
-            System.out.println("Enter the operation to be performed\n" +
-                    "1: Find an element\n" +
-                    "2: Insert an element\n" +
-                    "3: Get an element\n" +
-                    "4: Delete an element\n" +
-                    "5: Display the array\n" +
-                    "6: Delete all the elements matching the given value\n" +
-                    "7: Insert an element at a given index\n" +
-                    "8: Delete an element at a given index\n" +
-                    "9: Exit");
-            int choice = sc.nextInt();
-            Exit = false;
-            // while (!Exit) {
-                switch (choice) {
+            
+            //Menu for doing the operations.
+            System.out.println("Enter your choice :");
+            System.out.println(" 1. Search an element \n 2. Insertion\n 3. Get the element at an index\n 4. Deletion\n 5. Display elements of array\n 6. Delete all elements matching the given value\n 7. Insert an element at a given index\n 8. Delete element at given index\n 9. Random Init \n 10. Bubble Sort \n 11. Selection Sort \n 12. Insertion Sort \n 13. Exit\n");
+            option = sc.nextInt();
+
+            while (!Exit) {
+                
+                // SWITCH CASE
+                switch (option) {
                     case 1:
                         System.out.println("Enter the element to find");
                         long value = sc.nextLong();
-                        int index = arr.find(value);
-                        if (index == -1) {
-                            System.out.println("Element not found");
-                        } else {
-                            System.out.println("Element found at index " + index);
-                        }
+                        int index = a.find(value);
                         Exit = true;
                         break;
                     case 2:
                         System.out.println("Enter the element to be inserted");
                         value = sc.nextLong();
-                        arr.insert(value);
+                        a.insert(value);
                         Exit = true;
                         break;
                     case 3:
                         System.out.println("Enter the index of the element to be found");
                         index = sc.nextInt();
-                        System.out.println("Element at index " + index + " is " + arr.getElem(index));
+                        System.out.println("Element at index " + index + " is " + a.getElem(index));
                         Exit = true;
                         break;
                     case 4:
                         System.out.println("Enter the index of the element to be deleted");
                         index = sc.nextInt();
-                        arr.delete(index);
+                        a.delete(index);
                         Exit = true;
                         break;
                     case 5:
-                        arr.display();
+                        a.display();
                         Exit = true;
                         break;
                     case 6:
                         System.out.println("Enter the value of the element to be deleted");
                         value = sc.nextLong();
-                        int count = arr.dupDelete(value);
+                        int count = a.dupDelete(value);
                         System.out.println("Number of elements deleted are " + count);
                         Exit = true;
                         break;
@@ -73,33 +63,63 @@ public class TestApplication {
                         index = sc.nextInt();
                         System.out.println("Enter the value of the element to be inserted");
                         value = sc.nextLong();
-                        arr.insert(index, value);
+                        a.insert(index, value);
                         Exit = true;
                         break;
                     case 8:
                         System.out.println("Enter the index of the element to be deleted");
                         index = sc.nextInt();
-                        System.out.println("Element deleted is " + arr.deleteAt(index));
+                        System.out.println("Element deleted is " + a.deleteAt(index));
                         Exit = true;
                         break;
+                        
+                    case 9:
+                        a.initArray();
+                        System.out.println("Successfully Initialized");
+                        Exit = true;
+                        break;
+                    
+                    case 10:
+                        a.bubbleSort();
+                        System.out.println("Successfully sorted using Bubble Sort");
+                        Exit = true;
+                        break;
+                        
+                    case 11:
+                        a.selectionSort();
+                        System.out.println("Successfully sorted using Selection Sort");
+                        Exit = true;
+                        break;
+                        
+                    case 12:
+                        a.insertionSort();
+                        System.out.println("Successfully sorted using Insertion Sort");
+                        Exit = true;
+                        break;
+                    
+                    case 13:
+                        System.out.println("THANK YOU FOR USING THE PROGRAM!");
+                        Exit = false;
+                        break;
+                    
                     default:
                         System.out.println("Enter a valid choice");
                         Exit = true;
                         break;
+                        
                 }
-
                 System.out.println("Do you want to continue? (Y/N)");
                 choice1 = sc.next().charAt(0);
                 if (choice1 == 'Y' || choice1 == 'y') {
                     running = true;
                 } else if (choice1 == 'N' || choice1 == 'n') {
                     running = false;
-                    System.out.println("Thank you for using the program");
+                    System.out.println("EXITTING");
                 } else {
                     System.out.println("Enter a valid character");
                 }
             }
-        }
-    }
-// }
-
+            
+        }
+    }
+}

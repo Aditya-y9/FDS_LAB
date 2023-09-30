@@ -91,7 +91,12 @@ public class MyLongArray {
      * @return The index of the given element if found, or -1 if not found
      */
     public int find(long value) {
-        for (int i = 0; i < currentIndex; i++) {
+        // if array is null
+        if(arr == null) {
+            return -1;
+        }
+
+        for (int i = 0; i < arr.length; i++) {
             if (arr[i] == value) {
                 return i;
             }
