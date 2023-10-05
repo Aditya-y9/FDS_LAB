@@ -35,6 +35,8 @@ public interface Queue<T> {
          */
         T first();
 
+
+        
         /**
          * Removes and returns the first element of the queue.
          *
