@@ -23,7 +23,7 @@ public class TestApplication {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the size of the array");
         int size = sc.nextInt();
-        MyLongArray arr = new MyLongArray(size);
+        NewMyLongArray arr = new NewMyLongArray(size);
 
         char choice1 = 'Y';
         boolean Exit = false;
