@@ -40,7 +40,9 @@ class MyLongArray {
         }
         return -1;
     }
-
+    public long[] newInstance() {
+        return arr;
+    }
     /**
      * Inserts an element at the end of the array
      *

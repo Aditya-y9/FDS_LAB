@@ -154,21 +154,21 @@ public class TestApplication {
                             break;
                         case 9:
                             // bubble sort
-                            arr.bubbleSort();
+                            arr.BubbleSort(arr.newInstance(), size);
                             System.out.println("Array after bubble sort");
                             arr.display();
                             Exit = true;
                             break;
                         case 10:
                             // selection sort
-                            arr.selectionSort();
+                            arr.SelectionSort(arr.newInstance(), size);
                             System.out.println("Array after selection sort");
                             arr.display();
                             Exit = true;
                             break;
                         case 11:
                             // insertion sort
-                            arr.insertionSort();
+                            arr.InsertionSort(arr.newInstance(), size);
                             System.out.println("Array after insertion sort");
                             arr.display();
                             Exit = true;

@@ -12,7 +12,17 @@ import java.util.Random;
  * using Bubble Sort, Selection Sort, and Insertion Sort techniques.
  */
 public class NewMyLongArray extends MyLongArray {
-
+    public void initArray() {
+        Random r = new Random();
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = r.nextLong();
+        }
+        // because we have initialized the array
+        // up to its whole length
+        // then it is maximum filled
+        // so max index is the length of the array
+        currentIndex = arr.length;
+    }
     /**
      * Constructor for creating a new NewLongArray object with a specified size.
      *
@@ -29,7 +39,7 @@ public class NewMyLongArray extends MyLongArray {
      * @param size The size of the array.
      * @return A new array containing the sorted elements.
      */
-    public long[] sortUsingBubble(long[] originalArray, int size) {
+    public long[] BubbleSort(long[] originalArray, int size) {
         // Create a duplicate array to avoid modifying the original array
         long[] arr = duplicateArray(originalArray, size);
 
@@ -51,7 +61,7 @@ public class NewMyLongArray extends MyLongArray {
      * @param size The size of the array.
      * @return A new array containing the sorted elements.
      */
-    public long[] sortUsingSelection(long[] originalArray, int size) {
+    public long[] SelectionSort(long[] originalArray, int size) {
         // Create a duplicate array to avoid modifying the original array
         long[] arr = duplicateArray(originalArray, size);
 
@@ -75,7 +85,7 @@ public class NewMyLongArray extends MyLongArray {
      * @param size The size of the array.
      * @return A new array containing the sorted elements.
      */
-    public long[] sortUsingInsertion(long[] originalArray, int size) {
+    public long[] InsertionSort(long[] originalArray, int size) {
         // Create a duplicate array to avoid modifying the original array
         long[] arr = duplicateArray(originalArray, size);
 
@@ -117,5 +127,8 @@ public class NewMyLongArray extends MyLongArray {
         System.arraycopy(arr, 0, temp, 0, size);
         return temp;
     }
+
+
+    
 
 }
