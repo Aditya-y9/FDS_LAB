@@ -5,7 +5,7 @@ package lab4;
  * It contains methods for adding, removing, and accessing elements in the stack.
  * @param <T> the type of elements in the stack
  */
-public interface Stack<T> {
+public interface stack<T> {
 
     /**
      * Returns the number of elements in the stack.

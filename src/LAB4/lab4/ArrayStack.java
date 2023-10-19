@@ -5,7 +5,7 @@ package lab4;
  * It contains methods for adding, removing, and accessing elements in the stack.
  * @param <T> the type of elements in the stack
  */
-public class ArrayStack<T> implements Stack<T> {
+public class ArrayStack<T> implements stack<T> {
     private int top = -1;
     private T[] data;
 

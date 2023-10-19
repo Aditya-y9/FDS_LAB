@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "DelimiterMatching",
+            "request": "launch",
+            "mainClass": "lab4.StacksImplementation.DelimiterMatching",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
+            "name": "DelimiterMatching",
+            "request": "launch",
+            "mainClass": "lab4.DelimiterMatching",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
+            "name": "ReversingAWord",
+            "request": "launch",
+            "mainClass": "lab4.ReversingAWord",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
             "name": "TestApplication",
             "request": "launch",
             "mainClass": "TestApplication",
