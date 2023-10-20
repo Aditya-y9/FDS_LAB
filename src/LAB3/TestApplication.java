@@ -154,23 +154,30 @@ public class TestApplication {
                             break;
                         case 9:
                             // bubble sort
-                            arr.BubbleSort(arr.newInstance(), size);
+                            long[] sortedArr = arr.BubbleSort(arr.newInstance(), size);
                             System.out.println("Array after bubble sort");
-                            arr.display();
+                            for (int i = 0; i < sortedArr.length; i++) {
+                                System.out.print(sortedArr[i] + " ");
+                            }
+                            System.out.println();
                             Exit = true;
                             break;
                         case 10:
-                            // selection sort
-                            arr.SelectionSort(arr.newInstance(), size);
-                            System.out.println("Array after selection sort");
-                            arr.display();
+                            sortedArr = arr.SelectionSort(arr.newInstance(), size);
+                            System.out.println("Array after bubble sort");
+                            for (int i = 0; i < sortedArr.length; i++) {
+                                System.out.print(sortedArr[i] + " ");
+                            }
+                            System.out.println();
                             Exit = true;
                             break;
                         case 11:
-                            // insertion sort
-                            arr.InsertionSort(arr.newInstance(), size);
-                            System.out.println("Array after insertion sort");
-                            arr.display();
+                            sortedArr = arr.InsertionSort(arr.newInstance(), size);
+                            System.out.println("Array after bubble sort");
+                            for (int i = 0; i < sortedArr.length; i++) {
+                                System.out.print(sortedArr[i] + " ");
+                            }
+                            System.out.println();
                             Exit = true;
                             break;
                         default:
