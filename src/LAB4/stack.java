@@ -1,4 +1,4 @@
-package lab4;
+package LAB4;
 
 /**
  * The Stack interface represents a stack data structure.

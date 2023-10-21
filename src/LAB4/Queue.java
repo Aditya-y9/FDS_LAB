@@ -1,4 +1,4 @@
-package lab4;
+package LAB4;
 
 /**
  * A generic interface for a queue data structure.

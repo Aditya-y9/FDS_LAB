@@ -1,4 +1,4 @@
-package lab4;
+package LAB4;
 
 /**
  * The ArrayQueue class represents a queue data structure implemented using an array.

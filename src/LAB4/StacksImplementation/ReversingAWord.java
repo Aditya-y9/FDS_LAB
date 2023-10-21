@@ -1,6 +1,6 @@
-package lab4.StacksImplementation;
+package LAB4.StacksImplementation;
 
-import java.util.Stack;
+import LAB4.*;
 
 /**
  * The ReversingAWord class contains a main method that reverses a given string using a stack.
@@ -18,16 +18,25 @@ public class ReversingAWord {
         System.out.println(reversedWord); 
     }
 
+    /**
+     * Reverses the given string using a stack.
+     * 
+     * @param str the string to be reversed
+     * @return the reversed string
+     */
     public static String reverseString(String str) {
-        Stack<Character> stack = new Stack<>();
+        ArrayStack<Character> stack = new ArrayStack<Character>(str.length());
+        // Push each character of the string onto the stack.
         for (int i = 0; i < str.length(); i++) {
             stack.push(str.charAt(i));
         }
-        StringBuilder reversed = new StringBuilder();
+        // Pop each character from the stack and append it to the reversed string.
+        // beacuse stack is LIFO, the characters will be popped in reverse order.
+        String reversedString = "";
         while (!stack.isEmpty()) {
-            reversed.append(stack.pop());
+            reversedString += stack.pop();
         }
-        return reversed.toString();
+        return reversedString;
     }
 }
     

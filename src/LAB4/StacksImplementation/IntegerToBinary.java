@@ -1,6 +1,6 @@
-package lab4.StacksImplementation;
+package LAB4.StacksImplementation;
 
-import lab4.ArrayStack;
+import LAB4.*;
 
 /**
  * The IntegerToBinary class converts an integer to its binary representation.
@@ -11,7 +11,8 @@ import lab4.ArrayStack;
 public class IntegerToBinary {
     public static void main(String[] args) {
         int num = 10;
-        ArrayStack<Integer> stack = new ArrayStack<Integer>();
+        ArrayStack<Integer> stack = new ArrayStack<>(num);
+        System.out.print("The binary representation of " + num + " is: ");
         while (num > 0) {
             stack.push(num % 2);
             num = num / 2;

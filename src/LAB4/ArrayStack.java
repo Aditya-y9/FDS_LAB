@@ -1,4 +1,4 @@
-package lab4;
+package LAB4;
 
 /**
  * The ArrayStack class represents a stack data structure implemented using an array.

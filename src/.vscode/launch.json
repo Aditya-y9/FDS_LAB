@@ -8,6 +8,27 @@
             "type": "java",
             "name": "DelimiterMatching",
             "request": "launch",
+            "mainClass": "LAB4.StacksImplementation.DelimiterMatching",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
+            "name": "MatchingTags",
+            "request": "launch",
+            "mainClass": "LAB4.StacksImplementation.MatchingTags",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
+            "name": "IntegerToBinary",
+            "request": "launch",
+            "mainClass": "LAB4.StacksImplementation.IntegerToBinary",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
+            "name": "DelimiterMatching",
+            "request": "launch",
             "mainClass": "lab4.StacksImplementation.DelimiterMatching",
             "projectName": "src_efcdd259"
         },
