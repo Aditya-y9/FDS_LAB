@@ -10,8 +10,32 @@ import java.util.Random;
 /**
  * This class extends the LongArray class and provides additional methods for sorting an array of long integers
  * using Bubble Sort, Selection Sort, and Insertion Sort techniques.
+ * 
  */
+/**
+ * This class extends the LongArray class and provides additional methods for sorting an array of long integers
+ * using Bubble Sort, Selection Sort, and Insertion Sort techniques.
+ * 
+ * @version 1.0
+ * @author Aditya
+ */
+
+
 public class NewMyLongArray extends MyLongArray {
+    long[] temp = new long[size];
+    /**
+     * Constructor for creating a new NewLongArray object with a specified size.
+     *
+     * @param size The size of the array.
+     */
+    public NewMyLongArray(int size) {
+        super(size);
+    }
+
+    /**
+     * Initiates a random array of long integers.
+     * @return A new array containing the sorted elements.
+     */
     public void initArray() {
         Random r = new Random();
         for (int i = 0; i < arr.length; i++) {
@@ -23,14 +47,7 @@ public class NewMyLongArray extends MyLongArray {
         // so max index is the length of the array
         currentIndex = arr.length;
     }
-    /**
-     * Constructor for creating a new NewLongArray object with a specified size.
-     *
-     * @param size The size of the array.
-     */
-    public NewMyLongArray(int size) {
-        super(size);
-    }
+    
 
     /**
      * Sorts an array of long integers using the Bubble Sort technique.

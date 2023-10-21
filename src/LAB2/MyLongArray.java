@@ -1,12 +1,41 @@
 
+/**
+ * <h1><strong>MyLongArray<strong></h1>
+ * <p>
+ * This class represents a LONG array with various operations on it like a database.
+ * It provides methods to insert, delete, find, and display elements in the array.
+ * The class also provides methods to delete all occurrences of a given value in the array,
+ * insert an element at a specified index, and delete an element at a specified index.
+ * </p>
+ * 
+ * The class has the following methods:
+ * <ol>
+ * - MyLongArray(int size): Initializes a new instance of the MyLongArray class with the specified size
+ * - find(long value): Finds the index of a given element in the array.
+ * - insert(long value): Inserts an element at the end of the array
+ * - getElem(int index): Gets the element at the given index
+ * - delete(int index): Deletes an element at the specified index by shifting elements to the left
+ * - delete(long value): Deletes all occurrences of a given value in the array
+ * - display(): Displays the elements in the array
+ * - dupDelete(long value): Deletes all occurrences of a given value in the array and returns the count
+ * - insert(int index, long value): Inserts an element at the specified index, shifting elements to the right
+ * - deleteAt(int index): Deletes an element at the specified index and returns its value
+ * </ol>
+ * 
+ * @author Aditya_Yedurkar_221080076
+ * @version 1.0
+ */
+/**
+ * This class represents a LONG array with various operations on it like a database.
+ * It provides methods to insert, delete, find, and display elements in the array.
+ * The class also provides methods to delete all occurrences of a given value in the array,
+ * insert an element at a specified index, and delete an element at a specified index.
+ * 
+ * @author Aditya_Yedurkar_221080076
+ * @version 1.0
+ */
 import java.util.Scanner;
 
-/** 
- * @author Aditya_Yedurkar_221080076
- * MyLongArray
- * Represents a LONG array with various operations on it
- * like a database
- */
 class MyLongArray {
     int size;
     int currentIndex = 0;
@@ -25,6 +54,17 @@ class MyLongArray {
         
     }
     
+    
+
+    public int getCurrentIndex() {
+        return currentIndex;
+    }
+
+    public void setCurrentIndex(int currentIndex) {
+        this.currentIndex = currentIndex;
+    }
+
+
 
     /**
      * Finds the index of a given element in the array.
@@ -40,9 +80,18 @@ class MyLongArray {
         }
         return -1;
     }
+
+
+    /**
+     * Returns a new instance of the long array.
+     *
+     * @return a new instance of the long array.
+     */
     public long[] newInstance() {
         return arr;
     }
+
+    
     /**
      * Inserts an element at the end of the array
      *
@@ -134,7 +183,14 @@ class MyLongArray {
 
     /**
      * Inserts an element at the specified index, shifting elements to the right
-     *
+     * Checks for invalid index and returns if invalid
+     * Checks if the array is full and returns if full
+     * 
+     * 
+     * makes space
+     * shifts elements to the right
+     * inserts the element
+     * 
      * @param index The index at which to insert the element
      * @param value The value to insert.
      */
@@ -160,7 +216,9 @@ class MyLongArray {
 
     /**
      * Deletes an element at the specified index and returns its value
-     *
+     * Checks for invalid index and returns -1 if invalid
+     * Returns the deleted element's value otherwise
+     * Uses the delete() method to delete the element
      * @param index The index of the element to delete
      * @return The deleted element's value, or -1 if the index is invalid
      */
