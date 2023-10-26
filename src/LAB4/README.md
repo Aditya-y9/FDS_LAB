@@ -63,3 +63,25 @@ This method is used to check whether the queue is empty or not. It returns true 
 #### CPU Scheduling
 
 
+# Learning lessons from the experiment
+# I have learned how to implement stacks and queues in Java.
+# I have learned how to use stacks and queues in solving problems.
+# Learnt implementation of stacks and queues using Array.
+# Learnt various methods of stacks and queues.
+# Learnt about the applications of stacks and queues.
+# Practiced using stacks and queues in solving problems.
+# Made interface and class for stacks and queues.
+
+# Conclusion
+# Stacks and queues are data structures that are used to store data in a particular order.
+# Stacks and queues are used in solving various problems.
+# Stacks and queues are used in various applications.
+# Stacks and queues are implemented using arrays, linked lists, etc.
+# Stacks and queues are implemented using various methods.
+# Various supporting methods are used in implementing stacks and queues.
+# Stacks have methods like push, pop, top, size, isEmpty.
+# Queues have methods like enqueue, dequeue, first, size, isEmpty.
+# Stacks and queues are used in various applications like calculators, undo operation in text editors, etc.
+# We can use stacks when LIFO (Last In First Out) order is required.
+# We can use queues when FIFO (First In First Out) order is required.
+
