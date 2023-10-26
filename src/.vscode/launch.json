@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TestApplication",
+            "request": "launch",
+            "mainClass": "LAB4.StacksImplementation.TestApplication",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
             "name": "D1",
             "request": "launch",
             "mainClass": "LAB4.StacksImplementation.D1",
