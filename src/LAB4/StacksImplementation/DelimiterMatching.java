@@ -1,28 +1,18 @@
 package LAB4.StacksImplementation;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.*;
-
 import LAB4.*;
-
-
-/**
- * The DelimiterMatching class checks if the delimiters in the given input string are matching or not.
- * It contains a static method isDelimiterMatching which takes an input string and returns true if the delimiters are matching, false otherwise.
- * It also contains a main method to test the isDelimiterMatching method.
- */
 public class DelimiterMatching {
-
     /**
-     * Checks if the delimiters in the given input string are matching or not.
-     * @param input the input string to check
+     * This method checks if the delimiters in the input string are matching or not.
+     *
+     * @param input the input string
      * @return true if the delimiters are matching, false otherwise
      */
     public static boolean isDelimiterMatching(String input) {
-        ArrayStack<Character> stack = new ArrayStack<>(input.length()+1);
+        // Create a stack of characters.
+        ArrayStack<Character> stack = new ArrayStack<Character>(input.length());
         for (int i = 0; i < input.length(); i++) {
             char currentChar = input.charAt(i);
             // If the current character is an opening delimiter, then push it onto the stack.
@@ -37,7 +27,7 @@ public class DelimiterMatching {
                 // If the popped character does not match the current character, then the delimiters are not matching.
                 if ((currentChar == ')' && topChar != '(') || (currentChar == ']' && topChar != '[')
                         || (currentChar == '}' && topChar != '{')) {
-                            // so return false.
+                    // so return false.
                     return false;
                 }
             }
@@ -48,25 +38,29 @@ public class DelimiterMatching {
 
     /**
      * The main method to test the isDelimiterMatching method.
+     *
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         System.out.println("Enter the input string: ");
         Scanner s = new Scanner(System.in);
-        ArrayList<String> in = new ArrayList<String>();
-        while (s.hasNextLine() == true){
+        String input = "";
+        ArrayList<String> inputLines = new ArrayList<String>();
+        while (s.hasNextLine()) {
             String line = s.nextLine();
-            if ("".equals(line)) {
+            if (line.equals("")) {
                 break;
             }
-            in.add(line);
+            inputLines.add(line);
         }
-        String input = String.join("", in);
+        for (String line : inputLines) {
+            input += line;
+        }
         if (isDelimiterMatching(input)) {
             System.out.println("Delimiter matching");
-        }
-        else {
+        } else {
             System.out.println("Delimiter not matching");
         }
+        s.close();
     }
-};
+}
