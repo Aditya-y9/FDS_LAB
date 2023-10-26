@@ -16,7 +16,15 @@ public class test {
             
             //Menu for doing the operations.
             System.out.println("Enter your choice :");
-            System.out.println(" 1. Search an element \n 2. Insertion\n 3. Get the element at an index\n 4. Deletion\n 5. Display elements of array\n 6. Delete all elements matching the given value\n 7. Insert an element at a given index\n 8. Delete element at given index\n 9. Random Init \n 10. Bubble Sort \n 11. Selection Sort \n 12. Insertion Sort \n 13. Exit\n");
+            System.out.println("1: Find an element\n" +
+                    "2: Insert an element\n" +
+                    "3: Get an element\n" +
+                    "4: Delete an element\n" +
+                    "5: Display the array\n" +
+                    "6: Delete all the elements matching the given value\n" +
+                    "7: Insert an element at a given index\n" +
+                    "8: Delete an element at a given index\n" +
+                    "9: Exit");
             option = sc.nextInt();
 
             while (!Exit) {
@@ -72,32 +80,7 @@ public class test {
                         System.out.println("Element deleted is " + a.deleteAt(index));
                         Exit = true;
                         break;
-                        
                     case 9:
-                        a.initArray();
-                        System.out.println("Successfully Initialized");
-                        Exit = true;
-                        break;
-                    
-                    case 10:
-                        a.bubbleSort();
-                        System.out.println("Successfully sorted using Bubble Sort");
-                        Exit = true;
-                        break;
-                        
-                    case 11:
-                        a.selectionSort();
-                        System.out.println("Successfully sorted using Selection Sort");
-                        Exit = true;
-                        break;
-                        
-                    case 12:
-                        a.insertionSort();
-                        System.out.println("Successfully sorted using Insertion Sort");
-                        Exit = true;
-                        break;
-                    
-                    case 13:
                         System.out.println("THANK YOU FOR USING THE PROGRAM!");
                         Exit = false;
                         break;
@@ -119,7 +102,6 @@ public class test {
                     System.out.println("Enter a valid character");
                 }
             }
-            
-        }
-    }
+        }
+    }
 }

@@ -1,5 +1,11 @@
 package LAB4.StacksImplementation;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+import java.util.*;
+
 import LAB4.*;
 
 
@@ -16,7 +22,7 @@ public class DelimiterMatching {
      * @return true if the delimiters are matching, false otherwise
      */
     public static boolean isDelimiterMatching(String input) {
-        ArrayStack<Character> stack = new ArrayStack<>(input.length());
+        ArrayStack<Character> stack = new ArrayStack<>(input.length()+1);
         for (int i = 0; i < input.length(); i++) {
             char currentChar = input.charAt(i);
             // If the current character is an opening delimiter, then push it onto the stack.
@@ -44,9 +50,18 @@ public class DelimiterMatching {
      * The main method to test the isDelimiterMatching method.
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        String input = "{(Aditya Yedurkar 221080076)SYBTech IT}[]";
-        String mismatch = "[{}][[[Aditya Yedurkar 221080076}}";
+    public static void main(String[] args) throws IOException {
+        System.out.println("Enter the input string: ");
+        Scanner s = new Scanner(System.in);
+        ArrayList<String> in = new ArrayList<String>();
+        while (s.hasNextLine() == true){
+            String line = s.nextLine();
+            if ("".equals(line)) {
+                break;
+            }
+            in.add(line);
+        }
+        String input = String.join("", in);
         if (isDelimiterMatching(input)) {
             System.out.println("Delimiter matching");
         }
@@ -54,4 +69,4 @@ public class DelimiterMatching {
             System.out.println("Delimiter not matching");
         }
     }
-}
+};
