@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "D1",
+            "request": "launch",
+            "mainClass": "LAB4.StacksImplementation.D1",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
+            "name": "RoundRobinScheduler",
+            "request": "launch",
+            "mainClass": "LAB4.QueueImplementation.RoundRobinScheduler",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
             "name": "DelimiterMatching",
             "request": "launch",
             "mainClass": "LAB4.StacksImplementation.DelimiterMatching",
