@@ -1,5 +1,5 @@
 package LAB5;
-
+import LAB5.*;
 /**
  * An interface for a positional list, which is a list where each element has a position.
  * @param <T> the type of element held in the list

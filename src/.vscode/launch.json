@@ -8,6 +8,13 @@
             "type": "java",
             "name": "TestApplication",
             "request": "launch",
+            "mainClass": "LAB5.TestApplication",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
+            "name": "TestApplication",
+            "request": "launch",
             "mainClass": "LAB4.StacksImplementation.TestApplication",
             "projectName": "src_efcdd259"
         },
