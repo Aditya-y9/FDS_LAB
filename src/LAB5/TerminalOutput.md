@@ -19,12 +19,12 @@ Positional list is empty
 Enter your choice:
 3
 Enter the element you want to add First:
-Aditya
+Yedurkar
 Elements of the positional list are:
- -- Aditya
+ -- Yedurkar
 Size of the positional list is: 1
-First node is :Aditya
-Last node is :Aditya
+First node is :Yedurkar
+Last node is :Yedurkar
 
 1. First element
 2. Last element
@@ -37,10 +37,10 @@ Last node is :Aditya
 9. Display
 10. Exit
 Enter your choice:
-6
+5
 Enter the element you want to add:
-Yedurkar
-Enter the position after which you want to add :
+Aditya
+Enter the position before which you want to add :
 1
 Elements of the positional list are:
  -- Aditya -- Yedurkar
@@ -81,75 +81,11 @@ Last node is :FDS
 9. Display
 10. Exit
 Enter your choice:
-7
-Enter the position:
-1
-Elements of the positional list are:
- -- Yedurkar -- FDS
-Size of the positional list is: 2
-First node is :Yedurkar
-Last node is :FDS
-
-1. First element
-2. Last element
-3. Add first
-4. Add last
-5. Add before
-6. Add after
-7. Remove
-8. Set
-9. Display
-10. Exit
-Enter your choice:
-8
-Enter the position:
-2
-Enter the element you want to add:
-JAVA
-Elements of the positional list are:
- -- Yedurkar -- JAVA
-Size of the positional list is: 2
-First node is :Yedurkar
-Last node is :JAVA
-
-1. First element
-2. Last element
-3. Add first
-4. Add last
-5. Add before
-6. Add after
-7. Remove
-8. Set
-9. Display
-10. Exit
-Enter your choice:
-5
-Enter the element you want to add:
-Aditya
-Enter the position before which you want to add :
-1
-Elements of the positional list are:
- -- Aditya -- Yedurkar -- JAVA
-Size of the positional list is: 3
-First node is :Aditya
-Last node is :JAVA
-
-1. First element
-2. Last element
-3. Add first
-4. Add last
-5. Add before
-6. Add after
-7. Remove
-8. Set
-9. Display
-10. Exit
-Enter your choice:
 4
 Enter the element you want to add Last:
 LAB%
 Elements of the positional list are:
- -- Aditya -- Yedurkar -- JAVA -- LAB%
+ -- Aditya -- Yedurkar -- FDS -- LAB%
 Size of the positional list is: 4
 First node is :Aditya
 Last node is :LAB%
@@ -165,11 +101,51 @@ Last node is :LAB%
 9. Display
 10. Exit
 Enter your choice:
-8
+7
 Enter the position:
 4
-Enter the element you want to add:
+Elements of the positional list are:
+ -- Aditya -- Yedurkar -- FDS
+Size of the positional list is: 3
+First node is :Aditya
+Last node is :FDS
+
+1. First element
+2. Last element
+3. Add first
+4. Add last
+5. Add before
+6. Add after
+7. Remove
+8. Set
+9. Display
+10. Exit
+Enter your choice:
+4
+Enter the element you want to add Last:
 LAB5
+Elements of the positional list are:
+ -- Aditya -- Yedurkar -- FDS -- LAB5
+Size of the positional list is: 4
+First node is :Aditya
+Last node is :LAB5
+
+1. First element
+2. Last element
+3. Add first
+4. Add last
+5. Add before
+6. Add after
+7. Remove
+8. Set
+9. Display
+10. Exit
+Enter your choice:
+8
+Enter the position:
+3
+Enter the element you want to add:
+JAVA
 Elements of the positional list are:
  -- Aditya -- Yedurkar -- JAVA -- LAB5
 Size of the positional list is: 4
