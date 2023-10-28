@@ -3,6 +3,15 @@ package LAB5;
 import java.util.Iterator;
 import java.util.Scanner;
 
+/**
+ * This class represents a test application for a LinkedPositionalList.
+ * It allows the user to perform various operations on the list such as adding, removing, and setting elements.
+ * The user is prompted with a menu of options and can choose which operation to perform.
+ * The class uses a Scanner object to read user input from the console.
+ * The LinkedPositionalList is a generic class that can hold elements of any type.
+ * The class provides methods to add elements to the front or back of the list, add elements before or after a given position,
+ * remove an element at a given position, set the value of an element at a given position, and display the contents of the list.
+ */
 class TestApplication {
 
     
@@ -101,43 +110,13 @@ class TestApplication {
                         System.out.println("Invalid position");
                         break;
                     }
-                    System.out.println("Enter the element you want to add: ");
-                    element = sc.next();
                     Position<String> p = PositionList.first();
-                    for (int i = 1; i < pos; i++) {
-                        p = PositionList.after(p);
-                    }
-                    PositionList.addBefore(p, element);
-                    break;
-                case 8:
-                    System.out.println("Enter the position: ");
-                    pos = sc.nextInt();
-                    if(pos<1 || pos>PositionList.size()) {
-                        System.out.println("Invalid position");
-                        break;
-                    }
-                    System.out.println("Enter the element you want to add: ");
-                    element = sc.next();
-                    p = PositionList.first();
-                    for (int i = 1; i < pos; i++) {
-                        p = PositionList.after(p);
-                    }
-                    PositionList.addAfter(p, element);
-                    break;
-                case 9:
-                    System.out.println("Enter the position: ");
-                    pos = sc.nextInt();
-                    if(pos<1 || pos>PositionList.size()) {
-                        System.out.println("Invalid position");
-                        break;
-                    }
-                    p = PositionList.first();
                     for (int i = 1; i < pos; i++) {
                         p = PositionList.after(p);
                     }
                     PositionList.remove(p);
                     break;
-                case 10:
+                case 8:
                     System.out.println("Enter the position: ");
                     pos = sc.nextInt();
                     if(pos<1 || pos>PositionList.size()) {
@@ -152,6 +131,9 @@ class TestApplication {
                     element = sc.next();
                     PositionList.set(p, element);
                     break;
+                case 9:
+                    // display is already implemented
+                    break;
                 default:
                     System.out.println("Exiting the program ...");
                     System.out.println("Thank you for using the program");
@@ -159,30 +141,25 @@ class TestApplication {
             
             }
         } while (choice < 10 && choice > 0);
-
         
-        Iterable<Position<String>> posIterable = PositionList.positions();
-        // an iterable can support a for-each loop in Java
-        for (Position<String> p : posIterable) {
+        Iterable<Position<String>> posiIter = PositionList.positions();
+        for (Position<String> p : posiIter) {
             System.out.print(p.getElement() + " --> ");
         }
         System.out.println("\n");
 
-        // searching for a node element using iterable
-        System.out.println("!----------------------------->");
         System.out.println("Searching the positional list for a node");
-        System.out.println("Enter the city you want to search: ");
-        Scanner s = new Scanner(System.in);
-        String to_search = s.nextLine();
+        System.out.println("Enter the Element you want to search: ");
+        String to_search = sc.nextLine();
         int pos = 0;
-        for (Position<String> p : posIterable) {
+        for (Position<String> p : posiIter) {
             pos++;
             if (p.getElement().equals(to_search)) {
-                System.out.println("City " + to_search + " found at position " + pos);
+                System.out.println("Element " + to_search + " found at position " + pos);
                 return;
             }
         }
-        System.out.println("City not found");
+        System.out.println("Element not found");
     }
     public static <T> void display(LinkedPositionalList<T> posList) {
         if (posList.isEmpty()) {
@@ -192,7 +169,7 @@ class TestApplication {
 
             Iterator<T> i = posList.iterator();
             while (i.hasNext()) {
-                System.out.print(i.next() + " --> ");
+                System.out.print(" -- "+ i.next());
             }
             System.out.println("\nSize of the positional list is: " + posList.size());
             System.out.println("First node is :" + posList.first().getElement());
