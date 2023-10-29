@@ -31,7 +31,13 @@ public class Node<T> implements Position<T> {
      */
     public T getElement() throws IllegalStateException {
         if (next == null) 
+        try {
             throw new IllegalStateException("Position is no longer valid");
+        } catch (IllegalStateException e) {
+            IllegalStateException ise = new IllegalStateException("Position is no longer valid");
+            ise.initCause(e);
+            throw ise;
+        }
         else
             return element;
     }
