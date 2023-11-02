@@ -31,7 +31,8 @@ class TestApplication {
                     + "\n7. Remove"
                     + "\n8. Set"
                     + "\n9. Display"
-                    + "\n10. Exit");
+                    + "\n10. Search"
+                    + "\n11. Exit");
             System.out.println("Enter your choice: ");
             choice = 0;
             try {
@@ -48,14 +49,14 @@ class TestApplication {
                     break;
                 case 1:
                     if (PositionList.isEmpty()) {
-                        System.out.println("Positional list is empty");
+                        System.out.println("Positional list is empty, First Element does not exist");
                     } else {
                         System.out.println("First element is: " + PositionList.first().getElement());
                     }
                     break;
                 case 2:
                     if (PositionList.isEmpty()) {
-                        System.out.println("Positional list is empty");
+                        System.out.println("Positional list is empty, Last Element does not exist");
                     } else {
                         System.out.println("Last element is: " + PositionList.last().getElement());
                     }
@@ -63,7 +64,15 @@ class TestApplication {
                 case 3:
                     // enters an element at the front of the list returning the position of the new element
                     System.out.println("Enter the element you want to add First: ");
-                    String temp = sc.nextLine();
+                    String temp;
+                    try{
+                        temp = sc.nextLine();
+                    }
+                    catch(Exception e){
+                        System.out.println("Invalid input. Please enter an integer.");
+                        sc.next(); // clear the scanner buffer
+                        continue; // restart the loop
+                    }
                     PositionList.addFirst(temp);
                     // display(PositionList);
                     break;
@@ -71,7 +80,14 @@ class TestApplication {
                 case 4:
                     
                     System.out.println("Enter the element you want to add Last: ");
+                    try{
                     temp = sc.nextLine();
+                    }
+                    catch(Exception e){
+                        System.out.println("Invalid input. Please enter an integer.");
+                        sc.next(); // clear the scanner buffer
+                        continue; // restart the loop
+                    }
                     PositionList.addLast(temp);
 
                     break;
@@ -79,7 +95,15 @@ class TestApplication {
                     System.out.println("Enter the element you want to add: ");
                     String element = sc.next();
                     System.out.println("Enter the position before which you want to add : ");
-                    int position = sc.nextInt();
+                    int position;
+                    try{
+                        position = sc.nextInt();
+                    }
+                    catch(Exception e){
+                        System.out.println("Invalid input. Please enter an integer.");
+                        sc.next(); // clear the scanner buffer
+                        continue; // restart the loop
+                    }
                     if(position<1 || position>PositionList.size()) {
                         System.out.println("Invalid position");
                         break;
@@ -121,7 +145,15 @@ class TestApplication {
                     break;
                 case 7:
                     System.out.println("Enter the position: ");
-                    int pos = sc.nextInt();
+                    int pos;
+                    try{
+                        pos = sc.nextInt();
+                    }
+                    catch(Exception e){
+                        System.out.println("Invalid input. Please enter an integer.");
+                        sc.next();
+                        continue;
+                    }
                     if(pos<1 || pos>PositionList.size()) {
                         System.out.println("Invalid position");
                         break;
@@ -134,12 +166,26 @@ class TestApplication {
                     break;
                 case 8:
                     System.out.println("Enter the position: ");
+                    try{
                     pos = sc.nextInt();
+                    }
+                    catch(Exception e){
+                        System.out.println("Invalid input. Please enter an integer.");
+                        sc.next();
+                        continue;
+                    }
                     if(pos<1 || pos>PositionList.size()) {
                         System.out.println("Invalid position");
                         break;
                     }
+                    try{
                     p = PositionList.first();
+                    }
+                    catch(Exception e){
+                        System.out.println("Position list is empty");
+                        sc.next();
+                        continue;
+                    }
                     for (int i = 1; i < pos; i++) {
                         p = PositionList.after(p);
                     }
@@ -150,12 +196,30 @@ class TestApplication {
                 case 9:
                     // display is already implemented
                     break;
-                default:
+                case 10:
+                    System.out.println("Enter the Element you want to search: ");
+                    String to_search = sc.nextLine();
+                    pos = 0;
+                    for (Position<String> po : PositionList.positions()) {
+                        pos++;
+                        if (po.getElement().equals(to_search)) {
+                            System.out.println("Element " + to_search + " found at position " + pos);
+                            break;
+                        }
+                        if(pos==PositionList.size()){
+                            System.out.println("Element " + to_search + " not found");
+                        }
+                    }
+                    break;
+                case 11:
+                    System.out.println("Exiting... the program, Thank you!");
+                    break;
+                case 12:
                     System.out.println("Enter a valid choice");
                     break;
             
             }
-        } while (choice < 10 && choice >= 0);
+        } while ((choice < 11 && choice >= 0) || choice == 12);
         
         Iterable<Position<String>> posiIter = PositionList.positions();
         for (Position<String> p : posiIter) {
@@ -163,18 +227,6 @@ class TestApplication {
         }
         System.out.println("\n");
 
-        System.out.println("Searching the positional list for a node");
-        System.out.println("Enter the Element you want to search: ");
-        String to_search = sc.nextLine();
-        int pos = 0;
-        for (Position<String> p : posiIter) {
-            pos++;
-            if (p.getElement().equals(to_search)) {
-                System.out.println("Element " + to_search + " found at position " + pos);
-                return;
-            }
-        }
-        System.out.println("Element not found");
     }
     public static <T> void display(LinkedPositionalList<T> posList) {
         if (posList.isEmpty()) {
