@@ -2,6 +2,7 @@ package LAB5;
 
 import java.util.Iterator;
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 /**
  * This class represents a test application for a LinkedPositionalList.
@@ -32,10 +33,19 @@ class TestApplication {
                     + "\n9. Display"
                     + "\n10. Exit");
             System.out.println("Enter your choice: ");
-            choice = sc.nextInt();
+            choice = 0;
+            try {
+                choice = sc.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter an integer.");
+                sc.next(); // clear the scanner buffer
+                continue; // restart the loop
+            }
             sc.nextLine();
             switch (choice) {
-                
+                case 0:
+                    System.out.println("Invalid choice");
+                    break;
                 case 1:
                     if (PositionList.isEmpty()) {
                         System.out.println("Positional list is empty");
@@ -86,7 +96,13 @@ class TestApplication {
                     System.out.println("Enter the element you want to add: ");
                     element = sc.next();
                     System.out.println("Enter the position after which you want to add : ");
-                    position = sc.nextInt();
+                    try {
+                        position = sc.nextInt();
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid input. Please enter an integer.");
+                        sc.next(); // clear the scanner buffer
+                        continue; // restart the loop
+                    }
                     if(position<1 || position>PositionList.size()) {
                         System.out.println("Invalid position");
                         break;
@@ -135,12 +151,11 @@ class TestApplication {
                     // display is already implemented
                     break;
                 default:
-                    System.out.println("Exiting the program ...");
-                    System.out.println("Thank you for using the program");
+                    System.out.println("Enter a valid choice");
                     break;
             
             }
-        } while (choice < 10 && choice > 0);
+        } while (choice < 10 && choice >= 0);
         
         Iterable<Position<String>> posiIter = PositionList.positions();
         for (Position<String> p : posiIter) {

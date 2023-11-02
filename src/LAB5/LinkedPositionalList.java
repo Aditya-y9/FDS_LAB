@@ -22,81 +22,6 @@ import java.lang.Iterable;
  */
 public class LinkedPositionalList<T> implements PositionalListInterface<T> {
 
-    /**
-     * A node in the doubly linked list.
-     * @param <T> the type of element held by this node
-     */
-    private static class Node<T> implements Position<T> {
-
-        private T element; 
-        private Node<T> prev;
-        private Node<T> next; 
-
-        /**
-         * Constructs a new node with the given element, previous node, and next node.
-         * @param e the element to be stored in this node
-         * @param p the previous node in the list
-         * @param n the next node in the list
-         */
-        public Node(T e, Node<T> p, Node<T> n) {
-            this.element = e;
-            this.prev = p;
-            this.next = n;
-        }
-
-        /**
-         * Returns the element stored in this position.
-         * @return the element stored in this position
-         * @throws IllegalStateException if the position is no longer valid
-         */
-        public T getElement() throws IllegalStateException {
-            if (next == null) 
-                throw new IllegalStateException("Position is no longer valid");
-            else
-                return element;
-        }
-
-        /**
-         * Returns the previous node in the list.
-         * @return the previous node in the list
-         */
-        public Node<T> getPrev() {
-            return prev;
-        }
-
-        /**
-         * Returns the next node in the list.
-         * @return the next node in the list
-         */
-        public Node<T> getNext() {
-            return next;
-        }
-
-        /**
-         * Sets the element stored in this position.
-         * @param e the new element to be stored in this position
-         */
-        public void setElement(T e) {
-            this.element = e;
-        }
-
-        /**
-         * Sets the next node in the list.
-         * @param n the new next node in the list
-         */
-        public void setNext(Node<T> n) {
-            this.next = n;
-        }
-
-        /**
-         * Sets the previous node in the list.
-         * @param p the new previous node in the list
-         */
-        public void setPrev(Node<T> p) {
-            this.prev = p;
-        }
-    }
-
     private int size;
     private Node<T> header; 
     private Node<T> trailer;
@@ -120,7 +45,10 @@ public class LinkedPositionalList<T> implements PositionalListInterface<T> {
     private Node<T> validateNode(Position<T> p) throws IllegalArgumentException {
         if (!(p instanceof Node))
             throw new IllegalArgumentException("Passed position is invalid");
-        Node<T> node = (Node<T>) p; 
+        // type cast to generic type
+        Node<T> node = (Node<T>) p;
+        
+        // check if node is defunct
         if (node.getNext() == null) 
             throw new IllegalArgumentException("The passed node is defunct");
         return node;
@@ -132,9 +60,16 @@ public class LinkedPositionalList<T> implements PositionalListInterface<T> {
      * @return the position corresponding to the given node, or null if the node is the header or trailer
      */
     private Position<T> position(Node<T> node) {
+
+        // no  position for sentinel nodes
         if (node == this.header || node == this.trailer)
             return null;
         else
+            // return position of node
+            // convert node to position
+
+            // implicit type cast
+            // automatically done by compiler
             return node;
     }
 
@@ -265,6 +200,7 @@ public class LinkedPositionalList<T> implements PositionalListInterface<T> {
         Node<T> node = validateNode(p);
         T temp = node.getElement();
         node.setElement(t);
+        // return deleted element
         return temp;
     }
 
@@ -311,6 +247,9 @@ public class LinkedPositionalList<T> implements PositionalListInterface<T> {
          * The cursor is the position of the next element to be returned.
          * The recent is the position of the last element returned.
          */
+
+        // cursor ----> next element to be returned
+        // recent ----> last element returned
         private Position<T> cursor = first();
         Position<T> recent = null;
 

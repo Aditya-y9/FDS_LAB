@@ -30,6 +30,7 @@ public class Node<T> implements Position<T> {
      * @throws IllegalStateException if the position is no longer valid
      */
     public T getElement() throws IllegalStateException {
+        // NEXT NULL THEREFORE THE NODE IS TAILER SENTINEL
         if (next == null) 
         try {
             throw new IllegalStateException("Position is no longer valid");
@@ -47,7 +48,7 @@ public class Node<T> implements Position<T> {
      * @return the previous node in the list
      */
     public Node<T> getPrev() {
-        return prev;
+        return this.prev;
     }
 
     /**
@@ -55,7 +56,7 @@ public class Node<T> implements Position<T> {
      * @return the next node in the list
      */
     public Node<T> getNext() {
-        return next;
+        return this.next;
     }
 
     /**
