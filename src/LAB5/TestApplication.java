@@ -92,57 +92,51 @@ class TestApplication {
 
                     break;
                 case 5:
-                    System.out.println("Enter the element you want to add: ");
-                    temp = sc.nextInt();
-                    System.out.println("Enter the position before which you want to add : ");
-                    int position;
-                    try{
-                        position = sc.nextInt();
-                    }
-                    catch(Exception e){
-                        System.out.println("Invalid input. Please enter an integer.");
-                        sc.next(); // clear the scanner buffer
-                        continue; // restart the loop
-                    }
-                    if(position<1 || position>PositionList.size()) {
-                        System.out.println("Invalid position");
+                System.out.println("Enter the element you want to add: ");
+                int newElement = sc.nextInt();
+                System.out.println("Enter the element before which you want to add: ");
+                int existingElement = sc.nextInt();
+
+                Position<Integer> p = PositionList.first();
+                Iterator<Position<Integer>> iter = PositionList.positions().iterator();
+                while (iter.hasNext()) {
+                    Position<Integer> current = iter.next();
+                    if (current.getElement() == existingElement) {
+                        p = current;
                         break;
                     }
-                    else{
-                        Position<Integer> p = PositionList.first();
-                        for (int i = 1; i < position; i++) {
-                            p = PositionList.after(p);
-                        }
-                        PositionList.addBefore(p, temp);
-                        break;
-                    }
+                }
+
+                if (p == PositionList.first()) {
+                    PositionList.addFirst(newElement);
+                } else {
+                    PositionList.addBefore(p, newElement);
+                }
+                break;
+
                 case 6:
-                    System.out.println("Enter the element you want to add: ");
-                    temp = sc.nextInt();
-                    System.out.println("Enter the position after which you want to add : ");
-                    try {
-                        position = sc.nextInt();
-                    } catch (InputMismatchException e) {
-                        System.out.println("Invalid input. Please enter an integer.");
-                        sc.next(); // clear the scanner buffer
-                        continue; // restart the loop
-                    }
-                    if(position<1 || position>PositionList.size()) {
-                        System.out.println("Invalid position");
+                System.out.println("Enter the element you want to add: ");
+                newElement = sc.nextInt();
+                System.out.println("Enter the element after which you want to add: ");
+                existingElement = sc.nextInt();
+
+                p = PositionList.first();
+                iter = PositionList.positions().iterator();
+                while (iter.hasNext()) {
+                    Position<Integer> current = iter.next();
+                    if (current.getElement() == existingElement) {
+                        p = current;
                         break;
                     }
-                    if(position<1 || position>PositionList.size()) {
-                        System.out.println("Invalid position");
-                        break;
-                    }
-                    else{
-                        Position<Integer> p = PositionList.first();
-                        for (int i = 1; i < position; i++) {
-                            p = PositionList.after(p);
-                        }
-                        PositionList.addAfter(p, temp);
-                    }
-                    break;
+                }
+
+                if (p == PositionList.last()) {
+                    PositionList.addLast(newElement);
+                } else {
+                    PositionList.addAfter(p, newElement);
+                }
+                break;
+
                 case 7:
                     System.out.println("Enter the position: ");
                     int pos;
@@ -154,26 +148,21 @@ class TestApplication {
                         sc.next();
                         continue;
                     }
-                    if(pos<1 || pos>PositionList.size()) {
-                        System.out.println("Invalid position");
-                        break;
-                    }
-                    Position<Integer> p = PositionList.first();
-                    for (int i = 1; i < pos; i++) {
-                        p = PositionList.after(p);
-                    }
-                    PositionList.remove(p);
-                    break;
-                case 8:
-                    System.out.println("Enter the position: ");
-                    try{
-                    pos = sc.nextInt();
-                    }
-                    catch(Exception e){
-                        System.out.println("Invalid input. Please enter an integer.");
-                        sc.next();
-                        continue;
-                    }
+                        if(pos<1 || pos>PositionList.size()) {
+                            System.out.println("Invalid position");
+                            break;
+                        }
+                        p = PositionList.first();
+                    case 8:
+                        System.out.println("Enter the position: ");
+                        try{
+                        pos = sc.nextInt();
+                        }
+                        catch(Exception e){
+                            System.out.println("Invalid input. Please enter an integer.");
+                            sc.next();
+                            continue;
+                        }
                     if(pos<1 || pos>PositionList.size()) {
                         System.out.println("Invalid position");
                         break;
