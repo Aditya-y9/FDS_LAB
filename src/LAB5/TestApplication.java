@@ -26,8 +26,8 @@ class TestApplication {
                     + "\n2. Last element"
                     + "\n3. Add first"
                     + "\n4. Add last"
-                    + "\n5. Add before"
-                    + "\n6. Add after"
+                    + "\n5. Add after"
+                    + "\n6. Add before"
                     + "\n7. Remove"
                     + "\n8. Set"
                     + "\n9. Display"
@@ -94,16 +94,25 @@ class TestApplication {
                 case 5:
                     System.out.println("Enter the element you want to add: ");
                     String element = sc.next();
-                    System.out.println("Enter the position before which you want to add : ");
+                    System.out.println("Enter the position after which you want to add : ");
                     int position;
-                    try{
+                    try {
                         position = sc.nextInt();
-                    }
-                    catch(Exception e){
+                    } catch (InputMismatchException e) {
                         System.out.println("Invalid input. Please enter an integer.");
                         sc.next(); // clear the scanner buffer
                         continue; // restart the loop
                     }
+                    if (position < 1 || position > PositionList.size()) {
+                        System.out.println("Invalid position");
+                        break;
+                    } else {
+                        Iterator<Position<String>> it = PositionList.positions().iterator();
+                        for (int i = 1; i < position; i++) {
+                            it.next();
+                        }
+                        Position<String> p = it.next();
+                        PositionList.addAfter(p, element);                    }
                     if(position<1 || position>PositionList.size()) {
                         System.out.println("Invalid position");
                         break;
@@ -117,9 +126,9 @@ class TestApplication {
                         break;
                     }
                 case 6:
-                    System.out.println("Enter the element you want to add: ");
+                System.out.println("Enter the element you want to add: ");
                     element = sc.next();
-                    System.out.println("Enter the position after which you want to add : ");
+                    System.out.println("Enter the position before which you want to add : ");
                     try {
                         position = sc.nextInt();
                     } catch (InputMismatchException e) {
@@ -127,9 +136,16 @@ class TestApplication {
                         sc.next(); // clear the scanner buffer
                         continue; // restart the loop
                     }
-                    if(position<1 || position>PositionList.size()) {
+                    if (position < 1 || position > PositionList.size()) {
                         System.out.println("Invalid position");
                         break;
+                    } else {
+                        Iterator<Position<String>> it = PositionList.positions().iterator();
+                        for (int i = 1; i < position; i++) {
+                            it.next();
+                        }
+                        Position<String> p = it.next();
+                        PositionList.addBefore(p, element);                    
                     }
                     if(position<1 || position>PositionList.size()) {
                         System.out.println("Invalid position");
@@ -140,9 +156,9 @@ class TestApplication {
                         for (int i = 1; i < position; i++) {
                             p = PositionList.after(p);
                         }
-                        PositionList.addAfter(p, element);
+                        PositionList.addBefore(p, element);
+                        break;
                     }
-                    break;
                 case 7:
                     System.out.println("Enter the position: ");
                     int pos;
