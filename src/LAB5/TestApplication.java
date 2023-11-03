@@ -19,7 +19,7 @@ class TestApplication {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        LinkedPositionalList<String> PositionList = new LinkedPositionalList<>();
+        LinkedPositionalList<Integer> PositionList = new LinkedPositionalList<>();
         int choice;
         do {display(PositionList);
             System.out.println("1. First element"
@@ -64,9 +64,9 @@ class TestApplication {
                 case 3:
                     // enters an element at the front of the list returning the position of the new element
                     System.out.println("Enter the element you want to add First: ");
-                    String temp;
+                    int temp;
                     try{
-                        temp = sc.nextLine();
+                        temp = sc.nextInt();
                     }
                     catch(Exception e){
                         System.out.println("Invalid input. Please enter an integer.");
@@ -81,7 +81,7 @@ class TestApplication {
                     
                     System.out.println("Enter the element you want to add Last: ");
                     try{
-                    temp = sc.nextLine();
+                    temp = sc.nextInt();
                     }
                     catch(Exception e){
                         System.out.println("Invalid input. Please enter an integer.");
@@ -93,7 +93,7 @@ class TestApplication {
                     break;
                 case 5:
                     System.out.println("Enter the element you want to add: ");
-                    String element = sc.next();
+                    temp = sc.nextInt();
                     System.out.println("Enter the position before which you want to add : ");
                     int position;
                     try{
@@ -109,16 +109,16 @@ class TestApplication {
                         break;
                     }
                     else{
-                        Position<String> p = PositionList.first();
+                        Position<Integer> p = PositionList.first();
                         for (int i = 1; i < position; i++) {
                             p = PositionList.after(p);
                         }
-                        PositionList.addBefore(p, element);
+                        PositionList.addBefore(p, temp);
                         break;
                     }
                 case 6:
                     System.out.println("Enter the element you want to add: ");
-                    element = sc.next();
+                    temp = sc.nextInt();
                     System.out.println("Enter the position after which you want to add : ");
                     try {
                         position = sc.nextInt();
@@ -136,11 +136,11 @@ class TestApplication {
                         break;
                     }
                     else{
-                        Position<String> p = PositionList.first();
+                        Position<Integer> p = PositionList.first();
                         for (int i = 1; i < position; i++) {
                             p = PositionList.after(p);
                         }
-                        PositionList.addAfter(p, element);
+                        PositionList.addAfter(p, temp);
                     }
                     break;
                 case 7:
@@ -158,7 +158,7 @@ class TestApplication {
                         System.out.println("Invalid position");
                         break;
                     }
-                    Position<String> p = PositionList.first();
+                    Position<Integer> p = PositionList.first();
                     for (int i = 1; i < pos; i++) {
                         p = PositionList.after(p);
                     }
@@ -190,8 +190,8 @@ class TestApplication {
                         p = PositionList.after(p);
                     }
                     System.out.println("Enter the element you want to add: ");
-                    element = sc.next();
-                    PositionList.set(p, element);
+                    temp = sc.nextInt();
+                    PositionList.set(p, temp);
                     break;
                 case 9:
                     // display is already implemented
@@ -200,7 +200,7 @@ class TestApplication {
                     System.out.println("Enter the Element you want to search: ");
                     String to_search = sc.nextLine();
                     pos = 0;
-                    for (Position<String> po : PositionList.positions()) {
+                    for (Position<Integer> po : PositionList.positions()) {
                         pos++;
                         if (po.getElement().equals(to_search)) {
                             System.out.println("Element " + to_search + " found at position " + pos);
@@ -221,8 +221,8 @@ class TestApplication {
             }
         } while ((choice < 11 && choice >= 0) || choice == 12);
         
-        Iterable<Position<String>> posiIter = PositionList.positions();
-        for (Position<String> p : posiIter) {
+        Iterable<Position<Integer>> posiIter = PositionList.positions();
+        for (Position<Integer> p : posiIter) {
             System.out.print(p.getElement() + " --> ");
         }
         System.out.println("\n");
