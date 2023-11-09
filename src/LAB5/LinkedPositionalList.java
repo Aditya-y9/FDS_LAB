@@ -337,7 +337,10 @@ public class LinkedPositionalList<T> implements PositionalListInterface<T> {
          * @throws IllegalStateException if there is no element to be removed
          */
         @Override
-        public void remove() {
+        public void remove() throws IllegalStateException{
+            if(posIterator.hasNext() == false){
+                throw new IllegalStateException("No element to be removed");
+            }
             posIterator.remove();
         }
     }

@@ -14,9 +14,11 @@ import java.util.InputMismatchException;
  * remove an element at a given position, set the value of an element at a given position, and display the contents of the list.
  */
 class TestApplication {
-
-    
-
+    /**
+     * This method displays a menu of options to the user and reads the user's choice.
+     * It then performs the chosen operation on the list.
+     * @param args command line arguments
+     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         LinkedPositionalList<Integer> PositionList = new LinkedPositionalList<>();
@@ -92,13 +94,28 @@ class TestApplication {
 
                     break;
                 case 5:
+                boolean proper = true;
                 System.out.println("Enter the element you want to add: ");
                 int newElement = sc.nextInt();
                 System.out.println("Enter the element before which you want to add: ");
                 int existingElement = sc.nextInt();
-
+                while(!proper){
+                existingElement = sc.nextInt();
+                int pos = 0;
+                    for (Position<Integer> po : PositionList.positions()) {
+                        pos++;
+                        if (po.getElement()==existingElement) {
+                            proper = false;
+                        }
+                        
+                    }
+                    if(proper){
+                        System.out.println("Element " + existingElement + " not found");
+                    }
+                }
                 Position<Integer> p = PositionList.first();
                 Iterator<Position<Integer>> iter = PositionList.positions().iterator();
+
                 while (iter.hasNext()) {
                     Position<Integer> current = iter.next();
                     if (current.getElement() == existingElement) {
@@ -203,18 +220,15 @@ class TestApplication {
                 case 11:
                     System.out.println("Exiting... the program, Thank you!");
                     break;
-                case 12:
+                default:
                     System.out.println("Enter a valid choice");
                     break;
             
             }
-        } while ((choice < 11 && choice >= 0) || choice == 12);
+        } while (choice!=11);
         
-        Iterable<Position<Integer>> posiIter = PositionList.positions();
-        for (Position<Integer> p : posiIter) {
-            System.out.print(p.getElement() + " --> ");
-        }
-        System.out.println("\n");
+
+
 
     }
     public static <T> void display(LinkedPositionalList<T> posList) {
