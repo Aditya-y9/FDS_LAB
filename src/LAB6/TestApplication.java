@@ -173,16 +173,20 @@ public class TestApplication {
                 }
                     break;
                 case 7:
-                try{
-                    System.out.println("Edges of the tree are: ");
-                    Iterable<Position<String>> edges = tree.edges();
-                    for(Position<String> e : edges) {
-                        System.out.println(e.getElement());
-                    }
-                }
-                catch(Exception e){
-                    System.out.println("Error: "+e.getMessage());
-                }
+                    // try {
+                        System.out.println("Edges of the tree are: ");
+                        Iterable<Position<String>> edges = tree.edges();
+                        for (Position<String> edge : edges) {
+                            Position<String> parent = tree.parent(edge);
+                            Position<String> child = edge;
+                            if(parent!=null && child!=null){
+                            System.out.println(parent.getElement() + " -> " + child.getElement());
+                            }
+                        }
+                    // } catch (Exception e) {
+                    //     System.out.println("Error: " + e.getMessage());
+                    // }
+            
                     break;
                 case 8:
                 try{
