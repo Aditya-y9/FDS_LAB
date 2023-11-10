@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "test",
+            "request": "launch",
+            "mainClass": "LAB6.test",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
+            "name": "TestApplication",
+            "request": "launch",
+            "mainClass": "LAB6.TestApplication",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
             "name": "TestApplication",
             "request": "launch",
             "mainClass": "LAB5.TestApplication",

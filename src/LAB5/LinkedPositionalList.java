@@ -1,5 +1,7 @@
 package LAB5;
 import LAB5.*;
+import LAB6.Node;
+
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.lang.Iterable;
