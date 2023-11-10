@@ -36,7 +36,7 @@ while(choice != 11){
         }
         switch(choice){
             case 0:
-                printTree(tree.validate(tree.root()), "|");
+                printTree(tree.validate(tree.root()), " ");
                 break;
             case 1:
                 System.out.println("Enter the element of the root: ");
@@ -189,7 +189,7 @@ while(choice != 11){
     public static void printTree(Node<String> node, String indent) {
         System.out.println(indent + node.getElement());
         for (Node<String> child : node.getChildren()) {
-            printTree(child, indent + "!--");
+            printTree(child, indent + "|--");
         }
     }
 
