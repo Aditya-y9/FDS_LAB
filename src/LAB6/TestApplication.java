@@ -33,7 +33,7 @@ public class TestApplication {
         GeneralTree<String> tree = new GeneralTree<>();
         System.out.println("---------------Tree ADT initialized successfully--------------");
         int choice = 0;
-        while(choice != 9){
+        while(choice != 11){
             System.out.println(
                     "\n0. Visualize Tree"
                     + "\n1. Add Root"
@@ -44,7 +44,9 @@ public class TestApplication {
                     + "\n6. List Internal Nodes"
                     + "\n7. List Edges"
                     + "\n8. Path for a given node"
-                    + "\n9. Exit the program");
+                    + "\n9. Depth of the node"
+                    + "\n10. Height of the Tree"
+                    + "\n11. Exit the program");
 
             System.out.println("Enter your choice: ");
             try{
@@ -57,7 +59,12 @@ public class TestApplication {
             }
             switch(choice){
                 case 0:
+                try{
                     printTree(tree.validate(tree.root()), " ");
+                }
+                catch(Exception e){
+                    System.out.println("Error: "+e.getMessage());
+                }
                     break;
                 case 1:
                     System.out.println("Enter the element of the root: ");
@@ -84,7 +91,7 @@ public class TestApplication {
                     System.out.println("Child element "+ child  + " added to Parent " + parent + " element successfully");
                     }
                     catch(IllegalArgumentException e){
-                        System.out.println("Invalid input, Please enter a string");
+                        System.out.println("No such parent node found, Please enter a valid parent node");
                     }
                     catch(InputMismatchException e){
                         System.out.println("Invalid input, Please enter a string");
@@ -105,7 +112,7 @@ public class TestApplication {
                     printTree(tree.validate(n), " ");
                     }
                     catch(IllegalArgumentException e){
-                        System.out.println("Invalid input, Please enter a string");
+                        System.out.println("No such node found, Please enter a valid node");
                     }
                     catch(InputMismatchException e){
                         System.out.println("Invalid input, Please enter a string");
@@ -125,7 +132,7 @@ public class TestApplication {
                         break;
                     }
                     if(tree.isRoot(n)) {
-                        System.out.println("Root has no siblings");
+                        System.out.println("Root has no siblings!");
                         break;
                     }
                     if(tree.siblings(n) == null) {
@@ -139,7 +146,7 @@ public class TestApplication {
                     }
                     }
                     catch(IllegalArgumentException e){
-                        System.out.println("Invalid input, Please enter a string");
+                        System.out.println("No such node found, Please enter a valid node");
                     }
                     catch(InputMismatchException e){
                         System.out.println("Invalid input, Please enter a string");
@@ -173,7 +180,7 @@ public class TestApplication {
                 }
                     break;
                 case 7:
-                    // try {
+                    try {
                         System.out.println("Edges of the tree are: ");
                         Iterable<Position<String>> edges = tree.edges();
                         for (Position<String> edge : edges) {
@@ -183,9 +190,9 @@ public class TestApplication {
                             System.out.println(parent.getElement() + " -> " + child.getElement());
                             }
                         }
-                    // } catch (Exception e) {
-                    //     System.out.println("Error: " + e.getMessage());
-                    // }
+                    } catch (Exception e) {
+                        System.out.println("Error: " + e.getMessage());
+                    }
             
                     break;
                 case 8:
@@ -194,17 +201,52 @@ public class TestApplication {
                     System.out.println("Enter the element of the node: ");
                     String node1 = sc.next();
                     Position<String> n1 = tree.find(node1);
+                    n1 = (Node<String>)n1;
                     Iterable<Position<String>> path = tree.path(n1);
                     for(Position<String> p2 : path) {
                         System.out.println("       "+p2.getElement()+"       ");
                         System.out.println("--------|||||-------");
+                        System.out.println("         "+ node1 + "            ");
                     }
+                
+                }
+                catch(IllegalArgumentException e){
+                    System.out.println("No such node found, Please enter a valid element of the node");
+                }
+                catch(InputMismatchException e){
+                    System.out.println("Invalid input, Please enter a string");
                 }
                 catch(Exception e){
                     System.out.println("Error: "+e.getMessage());
                 }
                     break;
                 case 9:
+                    System.out.println("Enter the element of the node: ");
+                    try{
+                    String node2 = sc.next();
+                    Position<String> n2 = tree.find(node2);
+                    n2 = (Node<String>)n2;
+                    System.out.println("Depth of the node is: " + tree.depth(n2));
+                    }
+                    catch(IllegalArgumentException e){
+                        System.out.println("No such node found, Please enter a valid element of the node");
+                    }
+                    catch(InputMismatchException e){
+                        System.out.println("Invalid input, Please enter a string");
+                    }
+                    catch(Exception e){
+                        System.out.println("Error: "+e.getMessage());
+                    }
+                    break;
+                case 10:
+                // try{
+                    System.out.println("Height of the tree is: " + tree.height());
+                // }
+                // catch(Exception e){
+                //     System.out.println("Error: "+e.getMessage());
+                // }
+                break;
+                case 11:
                     System.out.println("Exiting the program.....,Thank you for using the program");
                     break;
                 default:

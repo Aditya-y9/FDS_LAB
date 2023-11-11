@@ -334,19 +334,41 @@ public class GeneralTree<E> extends AbstractTree<E> implements Iterable<E>, Tree
         Node<E> node = validate(p);
         Node<E> qNode = validate(q);
     
-        if(node==root()){
+        while(node.getParent() != root){
             snapshot.add(node);
-        }
-        if (!node.isLeaf()) {
-            for (Position<E> child : node.getChildren()) {
-                if (child == qNode) {
-                    snapshot.add(child);
-                    return snapshot;
-                }
-                preorderPath(child, q, snapshot);
-            }
+            preorderPath(node.getParent(), qNode, snapshot);
         }
         return snapshot;
+    }
+    
+    /**
+     * Returns the number of children of the given position.
+     * @param p the position whose number of children to return
+     * @return the number of children of the given position
+     */
+    public int depth(Position<E> p){
+        if(isRoot(p)){
+            return 0;
+        }
+        else{
+            return 1 + depth(parent(p));
+        }
+    }
+
+
+    /**
+     * Returns the height of the tree.
+     * @param p the position to use as the root of the tree
+     * @return the height of the tree
+     */
+    public int height(){
+        int h = 0;
+        for(Position<E> p : leaves()){
+            if (isExternal(p)){
+            h = Math.max(h, 1 + depth(p));
+            }
+        }
+        return h;
     }
 
     /**
