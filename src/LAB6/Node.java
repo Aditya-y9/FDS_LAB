@@ -1,7 +1,6 @@
 package LAB6;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Iterator;
 
 /**
  * A class representing a node in a tree data structure.

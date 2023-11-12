@@ -1,5 +1,5 @@
 package LAB6;
-import java.util.*;
+
 
 
 /**
@@ -16,6 +16,7 @@ import java.util.*;
  * @since 2023-11-09
  */
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -135,12 +136,12 @@ public class TestApplication {
                         System.out.println("Root has no siblings!");
                         break;
                     }
-                    if(tree.siblings(n) == null) {
+                    Iterable<Position<String>> siblings = tree.siblings(n);
+                    System.out.println("Siblings of the node are: ");
+                    if(siblings == null) {
                         System.out.println("Given Node has no siblings!");
                         break;
                     }
-                    Iterable<Position<String>> siblings = tree.siblings(n);
-                    System.out.println("Siblings of the node are: ");
                     for(Position<String> s : siblings) {
                         System.out.println(s.getElement() + " is a sibling of " + n.getElement());
                     }
@@ -201,17 +202,12 @@ public class TestApplication {
                     System.out.println("Enter the element of the node: ");
                     String node1 = sc.next();
                     Position<String> n1 = tree.find(node1);
-                    n1 = (Node<String>)n1;
-                    Iterable<Position<String>> path = tree.path(n1);
+                    Iterable<Position<String>> path = tree.getPath(n1);
                     for(Position<String> p2 : path) {
                         System.out.println("       "+p2.getElement()+"       ");
-                        System.out.println("--------|||||-------");
-                        System.out.println("         "+ node1 + "            ");
+                        System.out.println("-----|||||-----");
                     }
-                
-                }
-                catch(IllegalArgumentException e){
-                    System.out.println("No such node found, Please enter a valid element of the node");
+
                 }
                 catch(InputMismatchException e){
                     System.out.println("Invalid input, Please enter a string");

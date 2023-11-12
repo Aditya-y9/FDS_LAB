@@ -1,7 +1,9 @@
 package LAB6;
 import java.util.Iterator;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+
 
 
 
@@ -312,34 +314,20 @@ public class GeneralTree<E> extends AbstractTree<E> implements Iterable<E>, Tree
     }
 
     /**
-     * Returns an iterable collection of the positions on the path from the root to the given position.
-     * @param p the position to find the path to
-     * @return an iterable collection of the positions on the path from the root to the given position
+     * Return the path from the root to the given position.
+     * @param p the position to return the path to
+     * @return the path from the root to the given position
      */
-    public Iterable<Position<E>> path(Position<E> p) {
-        List<Position<E>> snapshot = new ArrayList<>();
-        if (!this.isEmpty())
-            preorderPath(this.root, p, snapshot);
-        return snapshot;
+    public List<Position<E>> getPath(Position<E> p) {
+    List<Position<E>> path = new ArrayList<>();
+    while (p != null) {
+        path.add(p);
+        p = parent(p);
     }
+    Collections.reverse(path);
+    return path;
+}
 
-    /**
-     * Adds the positions on the path from the given position to the given target position to the given list.
-     * @param p the current position in the traversal
-     * @param q the target position to find the path to
-     * @param snapshot the list to add the positions on the path to
-     * @return the updated list of positions on the path
-     */
-    public Iterable<Position<E>> preorderPath(Position<E> p, Position<E> q, List<Position<E>> snapshot) {
-        Node<E> node = validate(p);
-        Node<E> qNode = validate(q);
-    
-        while(node.getParent() != root){
-            snapshot.add(node);
-            preorderPath(node.getParent(), qNode, snapshot);
-        }
-        return snapshot;
-    }
     
     /**
      * Returns the number of children of the given position.
