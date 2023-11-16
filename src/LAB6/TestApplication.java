@@ -235,12 +235,12 @@ public class TestApplication {
                     }
                     break;
                 case 10:
-                // try{
+                try{
                     System.out.println("Height of the tree is: " + tree.height());
-                // }
-                // catch(Exception e){
-                //     System.out.println("Error: "+e.getMessage());
-                // }
+                }
+                catch(Exception e){
+                    System.out.println("Error: "+e.getMessage());
+                }
                 break;
                 case 11:
                     System.out.println("Exiting the program.....,Thank you for using the program");
@@ -258,8 +258,15 @@ public class TestApplication {
      * @param indent The amount of indentation to be used for the current level of the tree.
      */
     public static void printTree(Node<String> node, String indent) {
+
+        // a preorder traversal of the tree is performed
+
+        // variable indent is used to print the tree in a hierarchical format
         System.out.println(indent + node.getElement());
+
+        // for each child
         for (Node<String> child : node.getChildren()) {
+            // recursively print the subtree rooted at the child
             printTree(child, indent + "|--");
         }
     }
@@ -270,6 +277,7 @@ public class TestApplication {
      */
     public static void visualizeGeneralTree(Node<String> node) {
         System.out.println(node.getElement());
+
         for (Node<String> child : node.getChildren()) {
             visualizeGeneralTree(child);
         }

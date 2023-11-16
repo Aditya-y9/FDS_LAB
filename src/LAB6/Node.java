@@ -7,6 +7,8 @@ import java.util.List;
  * @param <E> the type of element stored in the node
  */
 public class Node<E> implements Position<E> {
+    // inherit the getElement() method from Position<E> 
+
     private E element;
     private Node<E> parent;
     private List<Node<E>> children;
@@ -19,15 +21,23 @@ public class Node<E> implements Position<E> {
     Node(E e, Node<E> p) {
         this.element = e;
         this.parent = p;
+        // children should be a list of nodes 
+        // list children of each node as a property
         this.children = new ArrayList<>();
     }
 
     /**
      * Returns the element stored in the node.
      * @return the element stored in the node
+     * @throws IllegalStateException if the element is null
      */
     @Override
-    public E getElement() {
+    // just being safe here, as position<E> is not even a class so no problem whatsoever
+    // no point in even overriding this method.
+    public E getElement() throws IllegalStateException {
+        if (this.element == null) {
+            throw new IllegalStateException("Element is null");
+        }
         return this.element;
     }
 
@@ -36,6 +46,7 @@ public class Node<E> implements Position<E> {
      * @param e the new element to store in the node
      */
     public void setElement(E e) {
+        // no point in returning older element
         this.element = e;
     }
 
@@ -52,6 +63,7 @@ public class Node<E> implements Position<E> {
      * @return a list of the children of the node
      */
     public List<Node<E>> getChildren() {
+        // returns list of child nodes
         return this.children;
     }
 
@@ -60,6 +72,7 @@ public class Node<E> implements Position<E> {
      * @return true if the node is a leaf, false otherwise
      */
     public boolean isLeaf() {
+        // if list of children is empty, node is a leaf
         return this.children.size() == 0;
     }
 
@@ -68,6 +81,8 @@ public class Node<E> implements Position<E> {
      * @param p the new parent of the node
      */
     public void setParent(Node<E> p) {
+        // set parent node
+        // again, no point in returning older parent node
         this.parent = p;
     }
 
@@ -76,6 +91,8 @@ public class Node<E> implements Position<E> {
      * @param child the node to add as a child
      */
     public void addChild(Node<E> child) {
+        // add child node to list of children
+        // list is a property of each node
         this.children.add(child);
     }
 }
