@@ -31,16 +31,15 @@ public class Node<T> implements Position<T> {
      */
     public T getElement() throws IllegalStateException {
         // NEXT NULL THEREFORE THE NODE IS TAILER SENTINEL
-        if (next == null) 
-        try {
-            throw new IllegalStateException("Position is no longer valid");
-        } catch (IllegalStateException e) {
-            IllegalStateException ise = new IllegalStateException("Position is no longer valid");
-            ise.initCause(e);
-            throw ise;
+
+        // sentinel nodes are not valid positions
+        if(this.next == null || this.prev == null){
+            throw new IllegalStateException("Positions not valid");
         }
-        else
-            return element;
+
+
+        
+        return this.element;
     }
 
     /**

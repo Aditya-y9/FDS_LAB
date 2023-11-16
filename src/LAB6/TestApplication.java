@@ -263,6 +263,7 @@ public static void printTree(Node<String> node, String indent, String index) {
   for (int i = 0; i < children.size() - 1; i++) {
 
     // get will return the element at the specified index
+    // children ----> children ----> children ----> children recursively till leaf node
     printTree(children.get(i), indent + "|  ", index + "." + (i + 1));
   }
 

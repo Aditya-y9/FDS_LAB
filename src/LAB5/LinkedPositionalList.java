@@ -47,6 +47,8 @@ public class LinkedPositionalList<T> implements PositionalListInterface<T> {
      *                                  list
      */
     private Node<T> validateNode(Position<T> p) throws IllegalArgumentException {
+
+        // 1.check if data type of p is Node
         if (!(p instanceof Node))
             throw new IllegalArgumentException("Passed position is invalid");
         // type cast to generic type
@@ -54,8 +56,9 @@ public class LinkedPositionalList<T> implements PositionalListInterface<T> {
 
         // check if node is defunct
 
+        // if node is defunct, it will have null as next or prev
         // cause at most next can be trailer
-        if (node.getNext() == null)
+        if (node.getNext() == null || node.getPrev() == null)
             throw new IllegalArgumentException("The passed node is defunct");
         return node;
     }
