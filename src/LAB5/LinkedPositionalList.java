@@ -23,6 +23,8 @@ import java.lang.Iterable;
 public class LinkedPositionalList<T> implements PositionalListInterface<T> {
 
     private int size;
+    
+    // store sentinel nodes
     private Node<T> header;
     private Node<T> trailer;
 
@@ -51,6 +53,8 @@ public class LinkedPositionalList<T> implements PositionalListInterface<T> {
         Node<T> node = (Node<T>) p;
 
         // check if node is defunct
+
+        // cause at most next can be trailer
         if (node.getNext() == null)
             throw new IllegalArgumentException("The passed node is defunct");
         return node;
@@ -89,7 +93,16 @@ public class LinkedPositionalList<T> implements PositionalListInterface<T> {
      */
     private Position<T> addBetween(T t, Node<T> predecessor, Node<T> successor) {
         Node<T> newNode = new Node<>(t, predecessor, successor);
+
+        // predecessor ------> newNode <------- successor
+
+        // link predecessor and successor to newNode
+
+        // predecessor ------> newNode
         predecessor.setNext(newNode);
+        
+
+        // newNode <------- successor
         successor.setPrev(newNode);
         ++this.size;
         return position(newNode);
@@ -121,6 +134,7 @@ public class LinkedPositionalList<T> implements PositionalListInterface<T> {
      *         empty
      */
     public Position<T> first() {
+        // first node is header---------->first element
         return position(this.header.getNext());
     }
 
@@ -132,6 +146,7 @@ public class LinkedPositionalList<T> implements PositionalListInterface<T> {
      *         empty
      */
     public Position<T> last() {
+        // last node is last element<----------trailer
         return position(this.trailer.getPrev());
     }
 
@@ -144,7 +159,9 @@ public class LinkedPositionalList<T> implements PositionalListInterface<T> {
      *                                  the list
      */
     public Position<T> before(Position<T> p) throws IllegalArgumentException {
+        // throw exception 
         Node<T> node = validateNode(p);
+        // return position of node <------- predecessor
         return position(node.getPrev());
     }
 
@@ -157,7 +174,9 @@ public class LinkedPositionalList<T> implements PositionalListInterface<T> {
      *                                  the list
      */
     public Position<T> after(Position<T> p) throws IllegalArgumentException {
+        // throw exception
         Node<T> node = validateNode(p);
+        // return position of node -------> successor
         return position(node.getNext());
     }
 
@@ -169,6 +188,8 @@ public class LinkedPositionalList<T> implements PositionalListInterface<T> {
      */
     @Override
     public Position<T> addFirst(T t) {
+        // header --------> first element
+        // header --------> newNode <-------- first element
         return addBetween(t, this.header, this.header.getNext());
     }
 
@@ -180,6 +201,8 @@ public class LinkedPositionalList<T> implements PositionalListInterface<T> {
      */
     @Override
     public Position<T> addLast(T t) {
+        // last element --------> trailer
+        // last element --------> newNode <-------- trailer
         return addBetween(t, this.trailer.getPrev(), this.trailer);
     }
 
@@ -194,7 +217,9 @@ public class LinkedPositionalList<T> implements PositionalListInterface<T> {
      */
     @Override
     public Position<T> addBefore(Position<T> p, T t) throws IllegalArgumentException {
+        // throw exception
         Node<T> node = validateNode(p);
+        // return position of node <------- newNode <------- node
         return addBetween(t, node.getPrev(), node);
     }
 
@@ -210,6 +235,7 @@ public class LinkedPositionalList<T> implements PositionalListInterface<T> {
     @Override
     public Position<T> addAfter(Position<T> p, T t) throws IllegalArgumentException {
         Node<T> node = validateNode(p);
+        // return position of node -------> newNode -------> node
         return addBetween(t, node, node.getNext());
     }
 
@@ -224,8 +250,12 @@ public class LinkedPositionalList<T> implements PositionalListInterface<T> {
      */
     @Override
     public T set(Position<T> p, T t) throws IllegalArgumentException {
+        // throw exception
         Node<T> node = validateNode(p);
+
+        // store old element
         T temp = node.getElement();
+        // replace old element with new element
         node.setElement(t);
         // return deleted element
         return temp;
@@ -248,7 +278,10 @@ public class LinkedPositionalList<T> implements PositionalListInterface<T> {
         size--;
         // unlink node
         node.setPrev(null);
+
+        // our condition to check if node is defunct
         node.setNext(null);
+
         node.setElement(null);
         return temp;
     }
@@ -291,6 +324,8 @@ public class LinkedPositionalList<T> implements PositionalListInterface<T> {
          */
         @Override
         public boolean hasNext() {
+            // cursor is next element to be returned
+            // so if cursor is not null, there is a next element
             return cursor != null;
         }
 
@@ -305,7 +340,9 @@ public class LinkedPositionalList<T> implements PositionalListInterface<T> {
             if (cursor == null)
                 throw new NoSuchElementException("No element found");
             else {
+                // change recent to cursor
                 recent = cursor;
+                // and update cursor to next element
                 cursor = after(cursor);
                 return recent;
             }

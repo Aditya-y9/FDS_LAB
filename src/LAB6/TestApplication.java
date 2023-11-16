@@ -247,28 +247,26 @@ public class TestApplication {
    * @param index The index of the current node.
    */
 public static void printTree(Node<String> node, String indent, String index) {
-  System.out.println(indent + "+--" + index + ": " + node.getElement());
 
+  // element at first argument is printed first
+  // main printer
+  System.out.println(indent + "+--" + index + " : " + node.getElement());
+
+  // children of the node are stored in a list
   List<Node<String>> children = node.getChildren();
+
+  // for each child, the printTree method is called recursively
   for (int i = 0; i < children.size() - 1; i++) {
+
+    // get will return the element at the specified index
     printTree(children.get(i), indent + "|  ", index + "." + (i + 1));
   }
+
+
+  // is like our base case it will stop if @ leaf node ------> no children
   if (children.size() > 0) {
     printTree(children.get(children.size() - 1), indent + "   ", index + "." + children.size());
   }
 }
 
-  /**
-   * This method prints the tree in a flat format, with each node printed on a
-   * separate line.
-   *
-   * @param node The root node of the tree to be printed.
-   */
-  public static void visualizeGeneralTree(Node<String> node) {
-    System.out.println(node.getElement());
-
-    for (Node<String> child : node.getChildren()) {
-      visualizeGeneralTree(child);
-    }
-  }
 }
