@@ -62,7 +62,7 @@ public class TestApplication {
       switch (choice) {
       case 0:
         try {
-          printTree(tree.validate(tree.root()), " ");
+          printTree(tree.validate(tree.root()), " ", "0");
         } catch (Exception e) {
           System.out.println("Error: " + e.getMessage());
         }
@@ -108,7 +108,7 @@ public class TestApplication {
             System.out.println("Node not found");
             break;
           }
-          printTree(tree.validate(n), " ");
+          printTree(tree.validate(n), " ","0");
         } catch (IllegalArgumentException e) {
           System.out.println("No such node found, Please enter a valid node");
         } catch (InputMismatchException e) {
@@ -241,27 +241,22 @@ public class TestApplication {
   }
 
   /**
-   * This method prints the tree in a hierarchical format, with each level
-   * indented by a certain amount.
-   *
-   * @param node   The root node of the tree to be printed.
-   * @param indent The amount of indentation to be used for the current level
-   *     of
-   *               the tree.
+   * This method prints the tree in a hierarchical format, with each node
+   * @param node The root node of the tree to be printed.
+   * @param indent The indentation to be used for the current node.
+   * @param index The index of the current node.
    */
-  public static void printTree(Node<String> node, String indent) {
+public static void printTree(Node<String> node, String indent, String index) {
+  System.out.println(indent + "+--" + index + ": " + node.getElement());
 
-    // a preorder traversal of the tree is performed
-
-    // variable indent is used to print the tree in a hierarchical format
-    System.out.println(indent + node.getElement());
-
-    // for each child
-    for (Node<String> child : node.getChildren()) {
-      // recursively print the subtree rooted at the child
-      printTree(child, indent + "|--");
-    }
+  List<Node<String>> children = node.getChildren();
+  for (int i = 0; i < children.size() - 1; i++) {
+    printTree(children.get(i), indent + "|  ", index + "." + (i + 1));
   }
+  if (children.size() > 0) {
+    printTree(children.get(children.size() - 1), indent + "   ", index + "." + children.size());
+  }
+}
 
   /**
    * This method prints the tree in a flat format, with each node printed on a
