@@ -1,18 +1,16 @@
 package LAB5;
 
-import LAB6.Position;
-
 /**
  * This class represents a node in a doubly linked list. It implements the Position interface and stores an element of type T, 
  * as well as references to the previous and next nodes in the list. It provides methods to get and set the element, 
  * previous node, and next node.
  * @param <T> the type of element stored in the node
  */
-public class Node1<T> implements Position<T> {
+public class Node<T> implements Position<T> {
 
     private T element; 
-    private Node1<T> prev;
-    private Node1<T> next; 
+    private Node<T> prev;
+    private Node<T> next; 
 
     /**
      * Constructs a new Node object with the given element, previous node, and next node.
@@ -20,7 +18,7 @@ public class Node1<T> implements Position<T> {
      * @param p the previous node in the list
      * @param n the next node in the list
      */
-    public Node1(T e, Node1<T> p, Node1<T> n) {
+    public Node(T e, Node<T> p, Node<T> n) {
         this.element = e;
         this.prev = p;
         this.next = n;
@@ -49,7 +47,7 @@ public class Node1<T> implements Position<T> {
      * Returns the previous node in the list.
      * @return the previous node in the list
      */
-    public Node1<T> getPrev() {
+    public Node<T> getPrev() {
         return this.prev;
     }
 
@@ -57,7 +55,7 @@ public class Node1<T> implements Position<T> {
      * Returns the next node in the list.
      * @return the next node in the list
      */
-    public Node1<T> getNext() {
+    public Node<T> getNext() {
         return this.next;
     }
 
@@ -73,7 +71,7 @@ public class Node1<T> implements Position<T> {
      * Sets the next node in the list to the given node.
      * @param n the new next node in the list
      */
-    public void setNext(Node1<T> n) {
+    public void setNext(Node<T> n) {
         this.next = n;
     }
 
@@ -81,7 +79,7 @@ public class Node1<T> implements Position<T> {
      * Sets the previous node in the list to the given node.
      * @param p the new previous node in the list
      */
-    public void setPrev(Node1<T> p) {
+    public void setPrev(Node<T> p) {
         this.prev = p;
     }
 }
