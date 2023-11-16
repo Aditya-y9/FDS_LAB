@@ -84,6 +84,10 @@ public class TestApplication {
         System.out.println("Enter the element of the parent: ");
         try {
           String parent = sc.next();
+          if(tree.isEmpty()){
+            System.out.println("Tree is empty, Please add a root first");
+            break;
+          }
           System.out.println("Enter the element of the child: ");
           String child = sc.next();
           Position<String> p = tree.find(parent);
