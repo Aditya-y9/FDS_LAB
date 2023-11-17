@@ -232,18 +232,30 @@ class TestApplication {
         break;
       case 10:
         System.out.println("Enter the Element you want to search: ");
-        String to_search = sc.nextLine();
-        int pos = 0;
-        for (Position<Integer> po : PositionList.positions()) {
-          pos++;
-          if (po.getElement().equals(to_search)) {
-            System.out.println("Element " + to_search + " found at position " +
-                               pos);
+        try {
+          temp = sc.nextInt();
+        } catch (Exception e) {
+          System.out.println("Invalid input. Please enter an integer.");
+          sc.next(); // clear the scanner buffer
+          continue;  // restart the loop
+        }
+        p = PositionList.first();
+        found = false;
+        iter = PositionList.positions().iterator();
+        while (iter.hasNext()) {
+          Position<Integer> current = iter.next();
+          if (current.getElement() == temp) {
+            p = current;
+            found = true;
             break;
           }
-          if (pos == PositionList.size()) {
-            System.out.println("Element " + to_search + " not found");
-          }
+        }
+        if (!found) {
+          System.out.println("Element " + temp + " not found in the list");
+          break;
+        }
+        else{
+          System.out.println("Element " + temp + " found in the list");
         }
         break;
       case 11:
