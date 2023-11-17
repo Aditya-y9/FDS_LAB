@@ -193,7 +193,7 @@ public class TestApplication {
 
         break;
       case 8:
-        try {
+        // try {
           System.out.println("To find path of the node,");
           System.out.println("Enter the element of the node: ");
           String node1 = sc.next();
@@ -204,11 +204,11 @@ public class TestApplication {
             System.out.println("-----|||||-----");
           }
 
-        } catch (InputMismatchException e) {
-          System.out.println("Invalid input, Please enter a string");
-        } catch (Exception e) {
-          System.out.println("Error: " + e.getMessage());
-        }
+        // } catch (InputMismatchException e) {
+        //   System.out.println("Invalid input, Please enter a string");
+        // } catch (Exception e) {
+        //   System.out.println("Error: " + e.getMessage());
+        // }
         break;
       case 9:
         System.out.println("Enter the element of the node: ");

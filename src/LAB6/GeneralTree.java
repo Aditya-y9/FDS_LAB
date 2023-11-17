@@ -124,7 +124,7 @@ public class GeneralTree<E> extends AbstractTree<E> {
 
     // if the parent is the null, throw an exception
     // this case applies only to the root
-    if (node.getParent() == null)
+    if (node.getParent() == node)
       throw new IllegalArgumentException("p is the root, so no parent");
 
     // return the parent
