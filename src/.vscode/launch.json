@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Q1",
+            "request": "launch",
+            "mainClass": "LAB7.Q1",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
+            "name": "Q1",
+            "request": "launch",
+            "mainClass": "LAB6.Q1",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
             "name": "test",
             "request": "launch",
             "mainClass": "LAB6.test",
