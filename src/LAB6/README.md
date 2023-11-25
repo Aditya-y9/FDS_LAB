@@ -1,3 +1,5 @@
+# Terminal Output
+
 # Q1
 
 ```
@@ -54,3 +56,16 @@ Date        Time        Type    Size    Name
 # Q4
 
 ```
+       +
+      / \       
+     /   \      
+    /     \     
+   /       \    
+   *       -       
+  / \     / \   
+ /   \   /   \  
+ a   b   c   d
+/ \ / \ / \ / \
+e f g h i j k l
+```
+
