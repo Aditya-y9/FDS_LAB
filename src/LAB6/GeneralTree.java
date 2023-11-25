@@ -4,6 +4,8 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+
+
 /**
  * A general tree implementation of the TreeInterface<E> interface.
  * The tree is composed of nodes that can have an arbitrary number of children.
@@ -11,14 +13,12 @@ import java.util.List;
  * @author Aditya Yedurkar
  * @version 1.5
  * @since 2023-11-09
- *
- *
- *
- *
  * General Tree class extends the AbstractTree class and implements the
  * TreeInterface indirectly.
  */
 public class GeneralTree<E> extends AbstractTree<E> {
+
+
 
   /**
    * Creates a new node with the given element and parent.
@@ -39,7 +39,7 @@ public class GeneralTree<E> extends AbstractTree<E> {
    * Attributes root and size
    */
   private Node<E> root;
-  private int size;
+  public int size;
 
   /**
    * Creates an empty general tree.
@@ -565,6 +565,9 @@ public class GeneralTree<E> extends AbstractTree<E> {
    */
   public Position<E> find(E e) {
     // helper method to abstract the root argument
+    if(find(this.root,e)==null){
+      System.out.println("Node not found in the Tree!");
+    }
     return find(this.root, e);
   }
 
@@ -602,6 +605,7 @@ public class GeneralTree<E> extends AbstractTree<E> {
     }
 
     // if no node is found with the element, return null
+    System.out.println("Given Node not found!");
     return null;
   }
 }

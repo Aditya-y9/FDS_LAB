@@ -6,6 +6,55 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TreeNode",
+            "request": "launch",
+            "mainClass": "TreeNode",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
+            "name": "Q4",
+            "request": "launch",
+            "mainClass": "LAB7.Q4",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
+            "name": "Q4",
+            "request": "launch",
+            "mainClass": "LAB6.Q4",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
+            "name": "Q3",
+            "request": "launch",
+            "mainClass": "LAB6.Q3",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
+            "name": "GFG",
+            "request": "launch",
+            "mainClass": "LAB6.GFG",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
+            "name": "QDirect",
+            "request": "launch",
+            "mainClass": "LAB6.QDirect",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
+            "name": "Q2",
+            "request": "launch",
+            "mainClass": "LAB6.Q2",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
             "name": "Q1",
             "request": "launch",
             "mainClass": "LAB7.Q1",
