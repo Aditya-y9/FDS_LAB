@@ -3,6 +3,7 @@ package LAB6;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.Iterator;
 
 /**
  * The Q1 class represents a program that reads a tree structure from a file and prints the tree.
@@ -88,7 +89,8 @@ public class Q1{
      * @param index the index of the node.
      * @param tree the tree to print.
      */
-    public static void printTree(Node<String> node, String prefix, String index, GeneralTree<String> tree) {
+
+    public static void PrintTreeusingIterator(Node<String> node, String prefix, String index, GeneralTree<String> tree) {
         // flag to check if the node is the root
         boolean p = false;
         if(node == tree.root()){
@@ -101,9 +103,12 @@ public class Q1{
         // print the node recursively by getting their children also
         System.out.println(prefix + index + ": " + node.getElement());
         }
-        for (int i = 0; i < node.getChildren().size(); i++) {
-            Node<String> child = node.getChildren().get(i);
-            printTree(child, prefix + "  ", index + "." + (i + 1),tree);        
+        Iterator<Node<String>> it = node.getChildren().iterator();
+        int i = -1;
+        while(it.hasNext()){
+            Node<String> child = it.next();
+            i++;
+            PrintTreeusingIterator(child, prefix + "  ", index + "." + (i + 1),tree);        
         }
     
     }
@@ -117,7 +122,7 @@ public class Q1{
 
         // print the tree, get root to start printing from it
         Node<String> root = (Node<String>) tree.root();
-        printTree(root, " ", "1", tree);
+        PrintTreeusingIterator(root, " ", "1", tree);
     }
 }
    

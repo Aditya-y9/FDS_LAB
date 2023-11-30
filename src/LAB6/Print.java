@@ -9,6 +9,13 @@ class Print {
         // print the tree
         printNodeInternal(Collections.singletonList(node), 1, maxLevel);
     }
+    public static <T> void printNodeUsingIterator(Node<String> node) {
+        // get the height of the tree
+        int maxLevel1 = Print.maxLevel(node);
+
+        // print the tree
+        printNodeInternal(Collections.singletonList(node), 1, maxLevel1);
+    }
 
     private static <T> void printNodeInternal(List<Node<T>> nodes, int level, int maxLevel) {
 

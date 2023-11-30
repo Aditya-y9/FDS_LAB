@@ -1,6 +1,7 @@
 package LAB6;
 
 import java.util.*;
+import java.util.Iterator;
 
 /**
  * LinkedBinaryTree represents a binary tree implementation using linked nodes.

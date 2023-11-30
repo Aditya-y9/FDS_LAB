@@ -41,7 +41,7 @@ public class Q4 {
         return root;
     }
     public static void main(String[] args) {
-        Print.printNode(test1());
+        Print.printNodeUsingIterator(test1());
     }
 }
 
