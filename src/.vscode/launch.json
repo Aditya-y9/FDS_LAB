@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TestApplication",
+            "request": "launch",
+            "mainClass": "LAB8.TestApplication",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
+            "name": "DatesComparator",
+            "request": "launch",
+            "mainClass": "DatesComparator",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
             "name": "TreeNode",
             "request": "launch",
             "mainClass": "TreeNode",
