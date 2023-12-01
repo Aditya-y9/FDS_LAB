@@ -1,5 +1,6 @@
 package LAB6;
- 
+ import java.util.Iterator;
+ import java.lang.Iterable;
 public class Q4
 
 {
@@ -19,6 +20,10 @@ public class Q4
         if (root == null) {
             return;
         }
+
+        Iterable<BTNode> children = root.children();
+        Iterator<BTNode> childrenIterator = children.iterator();
+        
  
         String prev_str = "   ";
         Trunk trunk = new Trunk(prev, prev_str);
@@ -44,7 +49,7 @@ public class Q4
             prev.str = prev_str;
         }
         trunk.str = "   |";
- 
+
         printTree(root.left, trunk, false);
     }
  

@@ -315,10 +315,15 @@ public class BinaryTree<E> {
     public List<Position<E>> children(Position<E> p) {
         Node<E> node = validate(p);
         List<Position<E>> children = new ArrayList<>(2);
-        if (node.getLeft() != null)
-            children.add(node.getLeft());
-        if (node.getRight() != null)
-            children.add(node.getRight());
+        Iterable<Position<E>> it = positions();
+        Iterator<Position<E>> iter = it.iterator();
+        if (iter.hasNext()) {
+            Position<E> next = iter.next();
+            if (next == node.getLeft())
+                children.add(next);
+            if (next == node.getRight())
+                children.add(next);
+        }
         return children;
     }
 
