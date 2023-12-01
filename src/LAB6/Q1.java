@@ -3,6 +3,9 @@ package LAB6;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+
+import Node;
+
 import java.util.Iterator;
 
 /**
@@ -33,6 +36,8 @@ public class Q1{
             // while loop till the end of the file
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
+                
+                // getting the indentations, just Right
                 int level = countLeadingSpaces(data) / 4; // Knowing tha each new child is indented by 4 spaces
                 data.trim();
 
@@ -90,25 +95,41 @@ public class Q1{
      * @param tree the tree to print.
      */
 
-    public static void PrintTreeusingIterator(Node<String> node, String prefix, String index, GeneralTree<String> tree) {
+    public static void PrintTree(Node<String> node, String prefix, String index, GeneralTree<String> tree) {
         // flag to check if the node is the root
         boolean p = false;
+
+        // if it is,
         if(node == tree.root()){
             // print the root in a special way
             System.out.println(prefix + node.getElement());
             // set the flag to true
             p = true;
         }
+
+        // if not, wow, you are not the root, you are a child, so print the child
         if(!p){
-        // print the node recursively by getting their children also
+        // print the node first
         System.out.println(prefix + index + ": " + node.getElement());
         }
+
+        // initialize the iterator to iterate over the children of the node
+        // iterator object from iterable object
         Iterator<Node<String>> it = node.getChildren().iterator();
+
+        // generate i for indexing the children
         int i = -1;
+
+        // while there are children, print them
         while(it.hasNext()){
+            // get the next child 
             Node<String> child = it.next();
             i++;
-            PrintTreeusingIterator(child, prefix + "  ", index + "." + (i + 1),tree);        
+
+            // print the child,
+            // and then,
+            // print its children
+            PrintTree(child, prefix + "  ", index + "." + (i + 1),tree);        
         }
     
     }
@@ -122,7 +143,7 @@ public class Q1{
 
         // print the tree, get root to start printing from it
         Node<String> root = (Node<String>) tree.root();
-        PrintTreeusingIterator(root, " ", "1", tree);
+        PrintTree(root, " ", "1", tree);
     }
 }
    

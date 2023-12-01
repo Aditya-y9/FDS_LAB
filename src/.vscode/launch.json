@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "LAB6.Main",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
+            "name": "Q41",
+            "request": "launch",
+            "mainClass": "Q41",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
             "name": "TestApplication",
             "request": "launch",
             "mainClass": "LAB8.TestApplication",

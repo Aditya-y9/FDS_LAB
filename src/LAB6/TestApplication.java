@@ -18,6 +18,8 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
+import Node;
+
 
 /**
  * This class provides a command-line interface for interacting with a

@@ -3,6 +3,8 @@ package LAB6;
 import java.util.ArrayList;
 import java.util.List;
 
+import Node;
+
 
 /**
  * A class representing a node in a tree data structure.
