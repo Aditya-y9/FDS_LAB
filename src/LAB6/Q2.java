@@ -1,5 +1,8 @@
 package LAB6;
 import java.io.*;
+import java.text.DateFormat;
+import java.util.Iterator;
+import java.lang.Iterable;
 public class Q2 {
     public static void main(String[] args){
         // a file object to store the path of the directory
@@ -15,6 +18,13 @@ public class Q2 {
         System.out.println("Directory of " + f.getName());
 
       ;
+      System.out.println("Files: ");
+      Iterable<DirecTree.Node> children = r.getSubdir();
+      Iterator<DirecTree.Node> childrenIterator = children.iterator();
+      while (childrenIterator.hasNext()) {
+          DirecTree.Node child = childrenIterator.next();
+          System.out.println(child.name);
+      }
         
         // showcase an interface.
         System.out.println("Date\t"+ "    " + "Time\tType\tSize\tName");

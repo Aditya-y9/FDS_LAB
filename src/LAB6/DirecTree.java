@@ -4,15 +4,17 @@ import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.Iterator;
+import java.lang.Iterable;
 
 public class DirecTree{
 
     static class Node {
         // node attributes
         // no generics used as name is a string and size is a long for each directory
-        private String name;
+        public String name;
         private int type;
-        private long size;
+        public long size;
         private Date date;
         private int Filecounter;
         private int Dircounter;
@@ -63,7 +65,7 @@ public class DirecTree{
 
         public int getFilecounter(){
             // return the number of files in the directory
-            return Filecounter;
+            return Filecounter; 
         }
 
         public int getDircounter(){
