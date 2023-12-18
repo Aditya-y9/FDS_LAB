@@ -2,9 +2,12 @@ package LAB6;
 
 
 import java.util.*;
+import java.util.Iterator;
+import java.lang.Iterable;
 
 
 public class Q3 {
+
 
     
     public static void main(String[] args) {
@@ -55,6 +58,12 @@ public class Q3 {
         // attach the left and right child of right child
         exp.attach(right, exp3, exp4);
 
+        Iterable<Position<String>> children = exp.children(exp.root());
+        Iterator<Position<String>> childrenIterator = children.iterator();
+        while (childrenIterator.hasNext()) {
+            Position<String> child = childrenIterator.next();
+            System.out.println(child.getElement());
+        }
         // print the tree in inorder
         exp.Inorder(roo);
 

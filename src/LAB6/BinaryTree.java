@@ -392,6 +392,7 @@ public class BinaryTree<E> {
         return snapshot;
     }
 
+    
     public void Inorder(Position<E> p) {
         // recursive on left node of root
         if (left(p) != null) {
