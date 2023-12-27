@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "AMapGraphTestApplication",
+            "request": "launch",
+            "mainClass": "LAB10.AMapGraphTestApplication",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
+            "name": "ALGraphTestApplication",
+            "request": "launch",
+            "mainClass": "LAB10.ALGraphTestApplication",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
+            "name": "AMGraphTestApplication",
+            "request": "launch",
+            "mainClass": "LAB10.AMGraphTestApplication",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
+            "name": "TestApplication",
+            "request": "launch",
+            "mainClass": "LAB10.TestApplication",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "LAB9.Main",
+            "projectName": "src_efcdd259"
+        },
+        {
+            "type": "java",
             "name": "Main",
             "request": "launch",
             "mainClass": "Main",
